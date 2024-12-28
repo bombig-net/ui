@@ -23,8 +23,7 @@
         "prebuild-storybook": "pnpm style-dictionary",
         "build-storybook": "storybook build",
         "serve-storybook": "serve storybook-static -p 6006",
-        "style-dictionary": "node build-tokens.mjs",
-        "version": "node -e \"const p=require('./package.json');const now=new Date();const timestamp=`${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}`;p.version=`0.0.0-dev.${timestamp}`;require('fs').writeFileSync('./package.json',JSON.stringify(p,null,2)+'\\n')\""
+        "style-dictionary": "node build-tokens.mjs"
     },
     "publishConfig": {
         "access": "public"
