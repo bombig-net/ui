@@ -2,21 +2,19 @@
     "name": "@bombig/ui",
     "version": "0.0.3",
     "description": "Bombig.net Design System",
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "type": "module",
-    "style": "dist/styles.css",
+    "style": "./dist/styles.css",
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js"
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "default": "./dist/index.js"
         },
-        "./styles": {
-            "import": "./dist/styles.css",
-            "require": "./dist/styles.css"
-        }
+        "./styles": "./dist/styles.css"
     },
     "sideEffects": [
         "**/*.css"
