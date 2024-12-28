@@ -10,7 +10,8 @@
     "files": [
         "dist",
         "src/styles/tokens.css",
-        "src/styles/tokens.js"
+        "src/styles/tokens.js",
+        "README.md"
     ],
     "scripts": {
         "prebuild": "pnpm style-dictionary",
@@ -23,11 +24,12 @@
         "build-storybook": "storybook build",
         "serve-storybook": "serve storybook-static -p 6006",
         "style-dictionary": "node build-tokens.mjs",
-        "version": "node -e \"process.stdout.write('0.0.0-' + Date.now())\" > version.txt && node -e \"const fs = require('fs'); const pkg = require('./package.json'); pkg.version = fs.readFileSync('./version.txt', 'utf8').trim(); fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 4) + '\\n')\""
+        "version": "node -e \"const fs=require('fs');const p=require('./package.json');p.version='0.0.0-'+Date.now();fs.writeFileSync('./package.json',JSON.stringify(p,null,2)+'\\n')\""
     },
     "publishConfig": {
         "access": "public"
     },
+    "license": "MIT",
     "peerDependencies": {
         "react": "^18.0.0",
         "react-dom": "^18.0.0"
