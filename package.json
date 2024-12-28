@@ -9,11 +9,14 @@
     "style": "dist/styles.css",
     "exports": {
         ".": {
+            "types": "./dist/index.d.ts",
             "import": "./dist/index.mjs",
-            "require": "./dist/index.js",
-            "types": "./dist/index.d.ts"
+            "require": "./dist/index.js"
         },
-        "./styles": "./dist/styles.css"
+        "./styles": {
+            "import": "./dist/styles.css",
+            "require": "./dist/styles.css"
+        }
     },
     "sideEffects": [
         "**/*.css"
