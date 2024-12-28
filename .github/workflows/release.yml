@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
 
       - uses: pnpm/action-setup@v2
         with:
@@ -41,8 +42,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Update version
+        run: pnpm version
+
       - name: Generate design tokens
         run: pnpm style-dictionary
+
+      - name: Build package
+        run: pnpm build
 
       - name: Build Storybook
         run: pnpm build-storybook
@@ -57,4 +64,9 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
+
+      - name: Publish to npm
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
