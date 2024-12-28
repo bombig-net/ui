@@ -11,11 +11,13 @@
         "dist",
         "src/styles/tokens.css",
         "src/styles/tokens.js",
+        "dist/styles.css",
         "README.md"
     ],
     "scripts": {
         "prebuild": "pnpm style-dictionary",
         "build": "tsup",
+        "build:css": "tailwindcss -i src/styles/globals.css -o dist/styles.css --minify",
         "predev": "pnpm style-dictionary",
         "dev": "concurrently \"pnpm style-dictionary --watch\" \"tsup --watch\"",
         "prestorybook": "pnpm style-dictionary",
