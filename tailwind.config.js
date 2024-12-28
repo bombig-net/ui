@@ -7,9 +7,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                // We'll define our color palette here later
-                // For now using slate colors for dark mode
-            },
+                brand: 'var(--global-brand)',
+                secondary: 'var(--global-secondary)',
+                black: 'var(--global-black)',
+                white: 'var(--global-white)',
+            }
         },
     },
     plugins: [],

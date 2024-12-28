@@ -5,9 +5,8 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
-  packages: write    # Keeping this for future package publishing
   id-token: write
 
 jobs:
@@ -29,8 +28,21 @@ jobs:
         with:
           version: 8
 
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+            ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
       - name: Install dependencies
         run: pnpm install
+
+      - name: Generate design tokens
+        run: pnpm style-dictionary build
 
       - name: Build Storybook
         run: pnpm build-storybook
@@ -45,14 +57,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-
-      # Temporarily disabled until NPM publishing is set up
-      # - name: Create Release Pull Request or Publish
-      #   id: changesets
-      #   uses: changesets/action@v1
-      #   with:
-      #     publish: pnpm publish
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
+        uses: actions/deploy-pages@v4 
