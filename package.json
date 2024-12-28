@@ -24,17 +24,12 @@
         "README.md"
     ],
     "scripts": {
-        "prebuild": "pnpm style-dictionary",
         "build": "tsup",
         "build:css": "tailwindcss -i src/styles/globals.css -o dist/styles.css --minify",
-        "predev": "pnpm style-dictionary",
-        "dev": "concurrently \"pnpm style-dictionary --watch\" \"tsup --watch\"",
-        "prestorybook": "pnpm style-dictionary",
-        "storybook": "concurrently \"pnpm style-dictionary --watch\" \"storybook dev -p 6006\"",
-        "prebuild-storybook": "pnpm style-dictionary",
+        "dev": "tsup --watch",
+        "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "serve-storybook": "serve storybook-static -p 6006",
-        "style-dictionary": "node build-tokens.mjs"
+        "serve-storybook": "serve storybook-static -p 6006"
     },
     "publishConfig": {
         "access": "public"
@@ -59,7 +54,6 @@
         "@storybook/react": "^8.4.7",
         "@storybook/react-vite": "^8.4.7",
         "@storybook/types": "^8.4.7",
-        "@tokens-studio/sd-transforms": "^1.2.9",
         "@types/node": "^22.10.2",
         "@types/react": "^19.0.2",
         "@types/react-dom": "^19.0.2",
@@ -70,7 +64,6 @@
         "react-dom": "^19.0.0",
         "serve": "^14.2.4",
         "storybook": "^8.4.7",
-        "style-dictionary": "^4.3.0",
         "tailwindcss": "^3.4.17",
         "tsup": "^8.3.5",
         "typescript": "^5.7.2"
