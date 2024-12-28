@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-import rawTokens from './tokens/tokens.json' assert { type: 'json' };
-import { groupTokensByType } from './src/lib/groupTokensByType.js';
-
+import rawTokens from './tokens.json' assert { type: 'json' };
+import { groupTokensByType } from './src/lib/groupTokensByType';
 const tokens = groupTokensByType(rawTokens);
 
 export default {
