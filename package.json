@@ -21,7 +21,6 @@
     ],
     "files": [
         "dist",
-        "src/styles/variables.css",
         "README.md"
     ],
     "scripts": {
