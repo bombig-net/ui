@@ -7,10 +7,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                brand: 'var(--global-brand)',
-                secondary: 'var(--global-secondary)',
-                black: 'var(--global-black)',
-                white: 'var(--global-white)',
+                brand: 'rgb(var(--global-brand))',
+                secondary: 'rgb(var(--global-secondary))',
+                black: 'rgb(var(--global-black))',
+                white: 'rgb(var(--global-white))',
             }
         },
     },

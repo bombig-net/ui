@@ -3,8 +3,8 @@
  */
 
 :root {
-  --global-brand: #ffd506; /* Brand Color */
-  --global-secondary: #da7f15; /* Secondary Color */
-  --global-black: #000000; /* Full Black */
-  --global-white: #ffffff; /* Full White */
+  --global-brand: 255 213 6; /* Brand Color */
+  --global-secondary: 218 127 21; /* Secondary Color */
+  --global-black: 0 0 0; /* Full Black */
+  --global-white: 255 255 255; /* Full White */
 }
