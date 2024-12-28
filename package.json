@@ -6,12 +6,21 @@
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
     "type": "module",
-    "sideEffects": false,
+    "style": "dist/styles.css",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./styles": "./dist/styles.css"
+    },
+    "sideEffects": [
+        "**/*.css"
+    ],
     "files": [
         "dist",
-        "src/styles/tokens.css",
-        "src/styles/tokens.js",
-        "dist/styles.css",
+        "src/styles/variables.css",
         "README.md"
     ],
     "scripts": {

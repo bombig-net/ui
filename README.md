@@ -41,7 +41,7 @@ yarn add @bombig/ui
 1. Import the CSS in your app's entry point (e.g., `app.tsx`, `_app.tsx`, or `main.tsx`):
 
 ```jsx
-import '@bombig/ui/dist/styles.css';
+import '@bombig/ui/styles';
 ```
 
 2. Use the components in your app:
@@ -56,7 +56,7 @@ function App() {
 }
 ```
 
-That's it! No additional configuration needed. The components will work out of the box with all the necessary styles.
+That's it! No additional configuration needed. The components will work out of the box with all the necessary styles and design tokens.
 
 ## 📚 Documentation
 

@@ -1,4 +1,3 @@
-import '../src/styles/variables.css'
 import '../src/styles/globals.css'
 
 /** @type { import('@storybook/react').Preview } */
