@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Separator } from './separator'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Separator } from './separator';
 
 const meta = {
     title: 'Components/Separator',
@@ -66,35 +67,36 @@ Use with flex layouts for vertical separators:
     <div>Right</div>
 </div>
 \`\`\`
-                `
-            }
-        }
+                `,
+            },
+        },
     },
     tags: ['autodocs'],
     argTypes: {
         orientation: {
             description: 'The orientation of the separator',
             control: 'radio',
-            options: ['horizontal', 'vertical']
+            options: ['horizontal', 'vertical'],
         },
         variant: {
             description: 'The visual style variant of the separator',
             control: 'select',
-            options: ['default', 'muted', 'strong']
+            options: ['default', 'muted', 'strong'],
         },
         decorative: {
-            description: 'Whether the separator is purely decorative or represents a semantic boundary',
-            control: 'boolean'
+            description:
+                'Whether the separator is purely decorative or represents a semantic boundary',
+            control: 'boolean',
         },
         className: {
             description: 'Additional CSS classes to apply to the separator',
-            control: 'text'
-        }
-    }
-} satisfies Meta<typeof Separator>
+            control: 'text',
+        },
+    },
+} satisfies Meta<typeof Separator>;
 
-export default meta
-type Story = StoryObj<typeof Separator>
+export default meta;
+type Story = StoryObj<typeof Separator>;
 
 export const Default: Story = {
     args: {
@@ -104,9 +106,9 @@ export const Default: Story = {
                 <Separator />
                 <div>Below separator</div>
             </div>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const Variants: Story = {
     render: () => (
@@ -124,8 +126,8 @@ export const Variants: Story = {
                 <Separator variant="strong" />
             </div>
         </div>
-    )
-}
+    ),
+};
 
 export const Vertical: Story = {
     render: () => (
@@ -136,12 +138,12 @@ export const Vertical: Story = {
             <Separator orientation="vertical" />
             <div>Right</div>
         </div>
-    )
-}
+    ),
+};
 
 export const CustomStyling: Story = {
     args: {
-        className: 'bg-blue-200 my-8'
+        className: 'bg-blue-200 my-8',
     },
     render: (args) => (
         <div className="space-y-4">
@@ -149,5 +151,5 @@ export const CustomStyling: Story = {
             <Separator {...args} />
             <div>Custom spacing above</div>
         </div>
-    )
-} 
+    ),
+};

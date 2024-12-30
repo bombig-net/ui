@@ -1,5 +1,5 @@
 // Components
-export * from './components/button/button'
+export * from './components/button/button';
 
 // Utilities
-export * from './lib/cn'
+export * from './lib/cn';

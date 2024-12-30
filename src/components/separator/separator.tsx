@@ -1,29 +1,31 @@
-import { cn } from '@/lib/cn'
-import * as RadixSeparator from '@radix-ui/react-separator'
-import { type VariantProps, cva } from 'class-variance-authority'
+import * as React from 'react';
 
-const separatorVariants = cva(
-    'bg-neutral-200 shrink-0',
-    {
-        variants: {
-            variant: {
-                default: 'bg-neutral-200',
-                muted: 'bg-neutral-100',
-                strong: 'bg-neutral-300'
-            }
+import * as RadixSeparator from '@radix-ui/react-separator';
+import { type VariantProps, cva } from 'class-variance-authority';
+
+import { cn } from '@/lib/cn';
+
+const separatorVariants = cva('bg-neutral-200 shrink-0', {
+    variants: {
+        variant: {
+            default: 'bg-neutral-200',
+            muted: 'bg-neutral-100',
+            strong: 'bg-neutral-300',
         },
-        defaultVariants: {
-            variant: 'default'
-        }
-    }
-)
+    },
+    defaultVariants: {
+        variant: 'default',
+    },
+});
 
 const orientationVariants = {
     horizontal: 'h-px w-full',
-    vertical: 'h-full w-px'
-} as const
+    vertical: 'h-full w-px',
+} as const;
 
-export interface SeparatorProps extends RadixSeparator.SeparatorProps, VariantProps<typeof separatorVariants> { }
+export interface SeparatorProps
+    extends RadixSeparator.SeparatorProps,
+        VariantProps<typeof separatorVariants> {}
 
 /**
  * A visual or semantic separator between content.
@@ -35,7 +37,7 @@ export function Separator({
     orientation = 'horizontal',
     decorative = true,
     ...props
-}: SeparatorProps) {
+}: SeparatorProps): React.JSX.Element {
     return (
         <RadixSeparator.Root
             decorative={decorative}
@@ -47,5 +49,5 @@ export function Separator({
             )}
             {...props}
         />
-    )
-} 
+    );
+}

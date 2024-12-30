@@ -50,9 +50,7 @@ import '@bombig/ui/styles';
 import { Button } from '@bombig/ui';
 
 function App() {
-  return (
-    <Button>Click me</Button>
-  );
+    return <Button>Click me</Button>;
 }
 ```
 
@@ -61,6 +59,7 @@ That's it! No additional configuration needed. The components will work out of t
 ## 📚 Documentation
 
 Visit our [Storybook documentation](https://bombig-net.github.io/ui/) to:
+
 - Explore all components
 - View live examples
 - Read usage guidelines

@@ -1,6 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from './section'
-import { Container } from '../container/container'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Container } from '../container/container';
+
+import { Section } from './section';
 
 const meta = {
     title: 'Components/Section',
@@ -79,29 +81,29 @@ Sections are often used with Containers to create a consistent layout structure:
     </Container>
 </Section>
 \`\`\`
-                `
-            }
-        }
+                `,
+            },
+        },
     },
     tags: ['autodocs'],
     argTypes: {
         asChild: {
             description: 'Change the default rendered element for the one passed as a child',
-            control: 'boolean'
+            control: 'boolean',
         },
         className: {
             description: 'Additional CSS classes to apply to the section',
-            control: 'text'
+            control: 'text',
         },
         children: {
             description: 'The content to be contained within the section',
-            control: 'text'
-        }
-    }
-} satisfies Meta<typeof Section>
+            control: 'text',
+        },
+    },
+} satisfies Meta<typeof Section>;
 
-export default meta
-type Story = StoryObj<typeof Section>
+export default meta;
+type Story = StoryObj<typeof Section>;
 
 export const Default: Story = {
     args: {
@@ -113,9 +115,9 @@ export const Default: Story = {
                     <div className="bg-neutral-100 rounded w-2/3 h-4" />
                 </div>
             </Container>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const WithBackground: Story = {
     args: {
@@ -128,9 +130,9 @@ export const WithBackground: Story = {
                     <div className="bg-neutral-200 rounded w-2/3 h-4" />
                 </div>
             </Container>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const CustomSpacing: Story = {
     args: {
@@ -143,9 +145,9 @@ export const CustomSpacing: Story = {
                     <div className="bg-neutral-100 rounded w-2/3 h-4" />
                 </div>
             </Container>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const AsArticle: Story = {
     args: {
@@ -160,6 +162,6 @@ export const AsArticle: Story = {
                     </div>
                 </Container>
             </article>
-        )
-    }
-} 
+        ),
+    },
+};

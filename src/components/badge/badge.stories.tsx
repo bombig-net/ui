@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Badge } from './badge'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Badge } from './badge';
 
 const meta = {
     title: 'Components/Badge',
@@ -15,31 +16,31 @@ Features:
 - Show/hide zero values
 - Visibility control
 
-[MUI Base Badge Documentation](https://mui.com/base-ui/react-badge/)`
-            }
-        }
+[MUI Base Badge Documentation](https://mui.com/base-ui/react-badge/)`,
+            },
+        },
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof Badge>
+} satisfies Meta<typeof Badge>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     render: () => (
         <Badge badgeContent={4}>
             <div className="bg-neutral-200 rounded w-10 h-10" />
         </Badge>
-    )
-}
+    ),
+};
 
 export const WithMaxValue: Story = {
     render: () => (
         <Badge badgeContent={123} max={99}>
             <div className="bg-neutral-200 rounded w-10 h-10" />
         </Badge>
-    )
-}
+    ),
+};
 
 export const WithZeroValue: Story = {
     render: () => (
@@ -51,8 +52,8 @@ export const WithZeroValue: Story = {
                 <div className="bg-neutral-200 rounded w-10 h-10" />
             </Badge>
         </div>
-    )
-}
+    ),
+};
 
 export const Invisible: Story = {
     render: () => (
@@ -64,13 +65,13 @@ export const Invisible: Story = {
                 <div className="bg-neutral-200 rounded w-10 h-10" />
             </Badge>
         </div>
-    )
-}
+    ),
+};
 
 export const CustomContent: Story = {
     render: () => (
         <Badge badgeContent="New">
             <div className="bg-neutral-200 rounded w-10 h-10" />
         </Badge>
-    )
-} 
+    ),
+};

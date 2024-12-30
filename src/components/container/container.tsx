@@ -1,5 +1,6 @@
-import { cn } from '@/lib/cn'
-import * as React from 'react'
+import * as React from 'react';
+
+import { cn } from '@/lib/cn';
 
 export interface ContainerProps extends React.ComponentPropsWithoutRef<'div'> {
     /**
@@ -22,8 +23,8 @@ export function Container({
     className,
     children,
     ...props
-}: ContainerProps) {
-    const Comp = asChild ? React.Fragment : 'div'
+}: ContainerProps): React.JSX.Element {
+    const Comp = asChild ? React.Fragment : 'div';
 
     return (
         <Comp
@@ -38,5 +39,5 @@ export function Container({
         >
             {children}
         </Comp>
-    )
-} 
+    );
+}

@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
+
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -7,7 +8,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     NavigationMenuViewport,
-} from './navigation-menu'
+} from './navigation-menu';
 
 const meta = {
     title: 'Components/NavigationMenu',
@@ -66,15 +67,15 @@ Override default styles using className:
     Custom trigger style
 </NavigationMenuTrigger>
 \`\`\`
-                `
-            }
-        }
+                `,
+            },
+        },
     },
-    tags: ['autodocs']
-} satisfies Meta<typeof NavigationMenu>
+    tags: ['autodocs'],
+} satisfies Meta<typeof NavigationMenu>;
 
-export default meta
-type Story = StoryObj<typeof NavigationMenu>
+export default meta;
+type Story = StoryObj<typeof NavigationMenu>;
 
 export const Basic: Story = {
     render: () => (
@@ -126,8 +127,8 @@ export const Basic: Story = {
             </NavigationMenuList>
             <NavigationMenuViewport />
         </NavigationMenu>
-    )
-}
+    ),
+};
 
 export const Variants: Story = {
     render: () => (
@@ -165,5 +166,5 @@ export const Variants: Story = {
                 </NavigationMenu>
             </div>
         </div>
-    )
-} 
+    ),
+};

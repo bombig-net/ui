@@ -1,5 +1,6 @@
-import { cn } from '@/lib/cn'
-import * as React from 'react'
+import * as React from 'react';
+
+import { cn } from '@/lib/cn';
 
 export interface SectionProps extends React.ComponentPropsWithoutRef<'section'> {
     /**
@@ -22,8 +23,8 @@ export function Section({
     className,
     children,
     ...props
-}: SectionProps) {
-    const Comp = asChild ? React.Fragment : 'section'
+}: SectionProps): React.JSX.Element {
+    const Comp = asChild ? React.Fragment : 'section';
 
     return (
         <Comp
@@ -38,5 +39,5 @@ export function Section({
         >
             {children}
         </Comp>
-    )
-} 
+    );
+}

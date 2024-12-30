@@ -1,4 +1,4 @@
-import '../src/styles/globals.css'
+import '../src/styles/globals.css';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -10,7 +10,7 @@ const preview = {
                 date: /Date$/i,
             },
         },
-    }
-}
+    },
+};
 
-export default preview 
+export default preview;

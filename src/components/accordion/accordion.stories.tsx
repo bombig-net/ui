@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './accordion'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './accordion';
 
 const meta = {
     title: 'Components/Accordion',
@@ -55,42 +56,43 @@ Override default styles using className:
     Custom trigger style
 </AccordionTrigger>
 \`\`\`
-                `
-            }
-        }
+                `,
+            },
+        },
     },
     tags: ['autodocs'],
     argTypes: {
         type: {
             description: 'Whether a single or multiple items can be opened at once',
             control: 'radio',
-            options: ['single', 'multiple']
+            options: ['single', 'multiple'],
         },
         collapsible: {
-            description: 'When type="single", allows closing content when clicking trigger of open item',
-            control: 'boolean'
+            description:
+                'When type="single", allows closing content when clicking trigger of open item',
+            control: 'boolean',
         },
         defaultValue: {
             description: 'The value of the item(s) to expand by default (controlled)',
-            control: 'text'
-        }
-    }
-} satisfies Meta<typeof Accordion>
+            control: 'text',
+        },
+    },
+} satisfies Meta<typeof Accordion>;
 
-export default meta
-type Story = StoryObj<typeof Accordion>
+export default meta;
+type Story = StoryObj<typeof Accordion>;
 
 export const Single: Story = {
     args: {
         type: 'single',
-        collapsible: true
+        collapsible: true,
     },
     render: (args) => (
         <Accordion {...args} className="w-full">
             <AccordionItem value="item-1">
                 <AccordionTrigger>What is this component?</AccordionTrigger>
                 <AccordionContent>
-                    This is a React component built on top of Radix UI's Accordion primitive,
+                    This is a React component built on top of Radix UI&apos;s Accordion primitive,
                     providing an accessible and customizable way to show and hide content.
                 </AccordionContent>
             </AccordionItem>
@@ -109,12 +111,12 @@ export const Single: Story = {
                 </AccordionContent>
             </AccordionItem>
         </Accordion>
-    )
-}
+    ),
+};
 
 export const Multiple: Story = {
     args: {
-        type: 'multiple'
+        type: 'multiple',
     },
     render: (args) => (
         <Accordion {...args} className="w-full">
@@ -132,18 +134,16 @@ export const Multiple: Story = {
             </AccordionItem>
             <AccordionItem value="item-3">
                 <AccordionTrigger>Third Section</AccordionTrigger>
-                <AccordionContent>
-                    All sections can be open simultaneously.
-                </AccordionContent>
+                <AccordionContent>All sections can be open simultaneously.</AccordionContent>
             </AccordionItem>
         </Accordion>
-    )
-}
+    ),
+};
 
 export const Variants: Story = {
     args: {
         type: 'single',
-        collapsible: true
+        collapsible: true,
     },
     render: (args) => (
         <div className="space-y-8">
@@ -170,5 +170,5 @@ export const Variants: Story = {
                 </Accordion>
             </div>
         </div>
-    )
-} 
+    ),
+};

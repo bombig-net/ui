@@ -1,6 +1,11 @@
-import { cn } from '@/lib/cn'
-import { Breadcrumbs as AriaBreadcrumbs, Breadcrumb as AriaBreadcrumb } from 'react-aria-components'
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
+
+import {
+    Breadcrumb as AriaBreadcrumb,
+    Breadcrumbs as AriaBreadcrumbs,
+} from 'react-aria-components';
+
+import { cn } from '@/lib/cn';
 
 const breadcrumbsStyles = [
     // Base layout
@@ -10,8 +15,8 @@ const breadcrumbsStyles = [
     // Base text styling
     'text-base text-neutral-600',
     // Proper spacing for wrapping
-    'gap-2 gap-y-1'
-]
+    'gap-2 gap-y-1',
+];
 
 const breadcrumbStyles = [
     // Layout
@@ -20,34 +25,24 @@ const breadcrumbStyles = [
     'after:content-["/"] after:select-none after:text-neutral-300 after:mx-[0.4em] after:inline-block',
     'last:after:hidden',
     // Ensure proper spacing when wrapping
-    'whitespace-nowrap'
-]
+    'whitespace-nowrap',
+];
 
-export interface BreadcrumbsProps extends React.ComponentPropsWithoutRef<typeof AriaBreadcrumbs> { }
-export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<typeof AriaBreadcrumb> { }
+export type BreadcrumbsProps = React.ComponentPropsWithoutRef<typeof AriaBreadcrumbs>;
+export type BreadcrumbProps = React.ComponentPropsWithoutRef<typeof AriaBreadcrumb>;
 
 export const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(
     ({ className, ...props }, ref) => {
         return (
-            <AriaBreadcrumbs
-                ref={ref}
-                className={cn(breadcrumbsStyles, className)}
-                {...props}
-            />
-        )
+            <AriaBreadcrumbs ref={ref} className={cn(breadcrumbsStyles, className)} {...props} />
+        );
     }
-)
-Breadcrumbs.displayName = 'Breadcrumbs'
+);
+Breadcrumbs.displayName = 'Breadcrumbs';
 
 export const Breadcrumb = forwardRef<HTMLLIElement, BreadcrumbProps>(
     ({ className, ...props }, ref) => {
-        return (
-            <AriaBreadcrumb
-                ref={ref}
-                className={cn(breadcrumbStyles, className)}
-                {...props}
-            />
-        )
+        return <AriaBreadcrumb ref={ref} className={cn(breadcrumbStyles, className)} {...props} />;
     }
-)
-Breadcrumb.displayName = 'Breadcrumb' 
+);
+Breadcrumb.displayName = 'Breadcrumb';

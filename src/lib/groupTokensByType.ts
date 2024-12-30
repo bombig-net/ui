@@ -14,15 +14,14 @@ interface TokenSet {
     };
 }
 
-export function groupTokensByType(tokenSet: TokenSet) {
-    const result: { [key: string]: { [key: string]: DesignToken['value'] } } = {};
+type TokensByType = Record<string, Record<string, DesignToken['value']>>;
+
+export function groupTokensByType(tokenSet: TokenSet): TokensByType {
+    const result: TokensByType = {};
 
     Object.entries(tokenSet.global).forEach(([key, token]) => {
-        if (!result[token.type]) {
-            result[token.type] = {};
-        }
-        result[token.type][key] = token.value;
+        (result[token.type] ??= {})[key] = token.value;
     });
 
     return result;
-} 
+}

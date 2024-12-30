@@ -1,8 +1,10 @@
-import { cn } from '@/lib/cn'
-import * as RadixNavigationMenu from '@radix-ui/react-navigation-menu'
-import { type VariantProps, cva } from 'class-variance-authority'
-import { ChevronDownIcon } from '@radix-ui/react-icons'
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
+
+import { ChevronDownIcon } from '@radix-ui/react-icons';
+import * as RadixNavigationMenu from '@radix-ui/react-navigation-menu';
+import { type VariantProps, cva } from 'class-variance-authority';
+
+import { cn } from '@/lib/cn';
 
 const navigationMenuTriggerStyle = cva(
     'inline-flex justify-center items-center bg-white data-[state=open]:bg-neutral-100/50 hover:bg-neutral-100 focus:bg-neutral-100 data-[active]:bg-neutral-100/50 disabled:opacity-50 px-4 py-2 rounded-md w-max h-10 font-medium text-sm hover:text-neutral-900 focus:text-neutral-900 transition-colors disabled:pointer-events-none focus:outline-none group',
@@ -11,47 +13,55 @@ const navigationMenuTriggerStyle = cva(
             variant: {
                 default: 'text-neutral-700',
                 muted: 'text-neutral-500',
-            }
+            },
         },
         defaultVariants: {
-            variant: 'default'
-        }
+            variant: 'default',
+        },
     }
-)
+);
 
-export interface NavigationMenuProps extends RadixNavigationMenu.NavigationMenuProps { }
-export interface NavigationMenuListProps extends RadixNavigationMenu.NavigationMenuListProps { }
-export interface NavigationMenuItemProps extends RadixNavigationMenu.NavigationMenuItemProps { }
-export interface NavigationMenuTriggerProps extends RadixNavigationMenu.NavigationMenuTriggerProps, VariantProps<typeof navigationMenuTriggerStyle> { }
-export interface NavigationMenuContentProps extends RadixNavigationMenu.NavigationMenuContentProps { }
-export interface NavigationMenuLinkProps extends RadixNavigationMenu.NavigationMenuLinkProps { }
-export interface NavigationMenuViewportProps extends RadixNavigationMenu.NavigationMenuViewportProps { }
-export interface NavigationMenuIndicatorProps extends RadixNavigationMenu.NavigationMenuIndicatorProps { }
+export type NavigationMenuProps = RadixNavigationMenu.NavigationMenuProps;
+export type NavigationMenuListProps = RadixNavigationMenu.NavigationMenuListProps;
+export type NavigationMenuItemProps = RadixNavigationMenu.NavigationMenuItemProps;
+export type NavigationMenuTriggerProps = RadixNavigationMenu.NavigationMenuTriggerProps &
+    VariantProps<typeof navigationMenuTriggerStyle>;
+export type NavigationMenuContentProps = RadixNavigationMenu.NavigationMenuContentProps;
+export type NavigationMenuLinkProps = RadixNavigationMenu.NavigationMenuLinkProps;
+export type NavigationMenuViewportProps = RadixNavigationMenu.NavigationMenuViewportProps;
+export type NavigationMenuIndicatorProps = RadixNavigationMenu.NavigationMenuIndicatorProps;
 
-export const NavigationMenu = forwardRef<HTMLElement, NavigationMenuProps>(({ className, children, ...props }, ref) => (
-    <RadixNavigationMenu.Root
-        ref={ref}
-        className={cn("relative z-10 flex flex-1 justify-center items-center max-w-max", className)}
-        {...props}
-    >
-        {children}
-    </RadixNavigationMenu.Root>
-))
-NavigationMenu.displayName = 'NavigationMenu'
+export const NavigationMenu = forwardRef<HTMLElement, NavigationMenuProps>(
+    ({ className, children, ...props }, ref) => (
+        <RadixNavigationMenu.Root
+            ref={ref}
+            className={cn(
+                'relative z-10 flex flex-1 justify-center items-center max-w-max',
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </RadixNavigationMenu.Root>
+    )
+);
+NavigationMenu.displayName = 'NavigationMenu';
 
-export const NavigationMenuList = forwardRef<HTMLUListElement, NavigationMenuListProps>(({ className, ...props }, ref) => (
-    <RadixNavigationMenu.List
-        ref={ref}
-        className={cn(
-            'flex flex-1 justify-center items-center space-x-1 p-1 list-none',
-            className
-        )}
-        {...props}
-    />
-))
-NavigationMenuList.displayName = 'NavigationMenuList'
+export const NavigationMenuList = forwardRef<HTMLUListElement, NavigationMenuListProps>(
+    ({ className, ...props }, ref) => (
+        <RadixNavigationMenu.List
+            ref={ref}
+            className={cn(
+                'flex flex-1 justify-center items-center space-x-1 p-1 list-none',
+                className
+            )}
+            {...props}
+        />
+    )
+);
+NavigationMenuList.displayName = 'NavigationMenuList';
 
-export const NavigationMenuItem = RadixNavigationMenu.Item
+export const NavigationMenuItem = RadixNavigationMenu.Item;
 
 export const NavigationMenuTrigger = forwardRef<HTMLButtonElement, NavigationMenuTriggerProps>(
     ({ className, variant, children, ...props }, ref) => (
@@ -67,8 +77,8 @@ export const NavigationMenuTrigger = forwardRef<HTMLButtonElement, NavigationMen
             />
         </RadixNavigationMenu.Trigger>
     )
-)
-NavigationMenuTrigger.displayName = 'NavigationMenuTrigger'
+);
+NavigationMenuTrigger.displayName = 'NavigationMenuTrigger';
 
 export const NavigationMenuContent = forwardRef<HTMLDivElement, NavigationMenuContentProps>(
     ({ className, ...props }, ref) => (
@@ -81,8 +91,8 @@ export const NavigationMenuContent = forwardRef<HTMLDivElement, NavigationMenuCo
             {...props}
         />
     )
-)
-NavigationMenuContent.displayName = 'NavigationMenuContent'
+);
+NavigationMenuContent.displayName = 'NavigationMenuContent';
 
 export const NavigationMenuLink = forwardRef<HTMLAnchorElement, NavigationMenuLinkProps>(
     ({ className, ...props }, ref) => (
@@ -95,8 +105,8 @@ export const NavigationMenuLink = forwardRef<HTMLAnchorElement, NavigationMenuLi
             {...props}
         />
     )
-)
-NavigationMenuLink.displayName = 'NavigationMenuLink'
+);
+NavigationMenuLink.displayName = 'NavigationMenuLink';
 
 export const NavigationMenuViewport = forwardRef<HTMLDivElement, NavigationMenuViewportProps>(
     ({ className, ...props }, ref) => (
@@ -111,8 +121,8 @@ export const NavigationMenuViewport = forwardRef<HTMLDivElement, NavigationMenuV
             />
         </div>
     )
-)
-NavigationMenuViewport.displayName = 'NavigationMenuViewport'
+);
+NavigationMenuViewport.displayName = 'NavigationMenuViewport';
 
 export const NavigationMenuIndicator = forwardRef<HTMLDivElement, NavigationMenuIndicatorProps>(
     ({ className, ...props }, ref) => (
@@ -127,5 +137,5 @@ export const NavigationMenuIndicator = forwardRef<HTMLDivElement, NavigationMenu
             <div className="relative top-[60%] bg-white shadow-md rounded-tl-sm w-2 h-2 rotate-45" />
         </RadixNavigationMenu.Indicator>
     )
-)
-NavigationMenuIndicator.displayName = 'NavigationMenuIndicator' 
+);
+NavigationMenuIndicator.displayName = 'NavigationMenuIndicator';

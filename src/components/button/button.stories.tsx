@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from './button'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from './button';
 
 const meta = {
     title: 'Components/Button',
@@ -43,119 +44,127 @@ function Example() {
 \`\`\`
 
 For more details about the underlying component, see the [React Aria Button documentation](https://react-spectrum.adobe.com/react-aria/Button.html).
-                `
-            }
-        }
+                `,
+            },
+        },
     },
     tags: ['autodocs'],
     argTypes: {
         variant: {
             description: 'The visual style variant of the button',
             control: 'select',
-            options: ['default', 'cta', 'outline']
+            options: ['default', 'cta', 'outline'],
         },
         children: {
             description: 'The content to display inside the button',
-            control: 'text'
+            control: 'text',
         },
         isDisabled: {
             description: 'Whether the button is disabled',
-            control: 'boolean'
+            control: 'boolean',
         },
         onPress: {
             description: 'Handler called when the press is released over the target',
-            action: 'pressed'
+            action: 'pressed',
         },
         onPressStart: {
             description: 'Handler called when a press interaction starts',
-            action: 'pressStart'
+            action: 'pressStart',
         },
         onPressEnd: {
             description: 'Handler called when a press interaction ends',
-            action: 'pressEnd'
+            action: 'pressEnd',
         },
         onPressChange: {
             description: 'Handler called when the press state changes',
-            action: 'pressChange'
+            action: 'pressChange',
         },
         onPressUp: {
             description: 'Handler called when a press is released over the target',
-            action: 'pressUp'
+            action: 'pressUp',
         },
         preventFocusOnPress: {
             description: 'Whether to prevent focus when clicking with a mouse',
-            control: 'boolean'
+            control: 'boolean',
         },
         excludeFromTabOrder: {
             description: 'Whether to exclude the element from the tab order',
-            control: 'boolean'
+            control: 'boolean',
         },
         className: {
-            description: 'Additional CSS classes to apply to the button. Use this to customize the button\'s appearance.',
-            control: 'text'
-        }
-    }
-} satisfies Meta<typeof Button>
+            description:
+                "Additional CSS classes to apply to the button. Use this to customize the button's appearance.",
+            control: 'text',
+        },
+    },
+} satisfies Meta<typeof Button>;
 
-export default meta
-type Story = StoryObj<typeof Button>
+export default meta;
+type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
     args: {
         children: 'Default Button',
-        variant: 'default'
-    }
-}
+        variant: 'default',
+    },
+};
 
 export const CTA: Story = {
     args: {
         children: 'CTA Button',
-        variant: 'cta'
-    }
-}
+        variant: 'cta',
+    },
+};
 
 export const Outline: Story = {
     args: {
         children: 'Outline Button',
-        variant: 'outline'
-    }
-}
+        variant: 'outline',
+    },
+};
 
 export const Disabled: Story = {
     args: {
         children: 'Cannot press',
-        isDisabled: true
-    }
-}
+        isDisabled: true,
+    },
+};
 
 export const PreventFocus: Story = {
     args: {
         children: 'No focus on mouse click',
-        preventFocusOnPress: true
-    }
-}
+        preventFocusOnPress: true,
+    },
+};
 
 export const ExcludeFromTabOrder: Story = {
     args: {
         children: 'Not in tab order',
-        excludeFromTabOrder: true
-    }
-}
+        excludeFromTabOrder: true,
+    },
+};
 
 export const WithPressHandlers: Story = {
     args: {
         children: 'Press handlers demo',
-        onPress: () => console.log('Pressed'),
-        onPressStart: () => console.log('Press started'),
-        onPressEnd: () => console.log('Press ended'),
-        onPressChange: isPressed => console.log('Press state:', isPressed),
-        onPressUp: () => console.log('Press up')
-    }
-}
+        onPress: undefined,
+        onPressStart: undefined,
+        onPressEnd: undefined,
+        onPressChange: undefined,
+        onPressUp: undefined,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'All press handlers will be logged to the Actions tab in Storybook.',
+            },
+        },
+    },
+};
 
 export const CustomStyling: Story = {
     args: {
         children: 'Custom styles',
-        className: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 border border-neutral-300'
-    }
-}
+        className: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 border border-neutral-300',
+    },
+};

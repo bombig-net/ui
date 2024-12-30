@@ -6,9 +6,7 @@ const tokens = groupTokensByType(rawTokens);
 
 export default {
     darkMode: 'class',
-    content: [
-        './src/**/*.{js,jsx,ts,tsx}',
-    ],
+    content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         extend: {
             colors: {
@@ -37,65 +35,104 @@ export default {
                     800: tokens.color['meteor-800'],
                     900: tokens.color['meteor-900'],
                     950: tokens.color['meteor-950'],
-                }
+                },
             },
             fontFamily: {
                 sans: [tokens.fontFamilies['font-sans']],
                 serif: [tokens.fontFamilies['font-serif']],
             },
             fontSize: {
-                xs: [tokens.typography['text-xs'].fontSize, {
-                    lineHeight: tokens.typography['text-xs'].lineHeight,
-                    letterSpacing: tokens.typography['text-xs'].letterSpacing,
-                }],
-                sm: [tokens.typography['text-sm'].fontSize, {
-                    lineHeight: tokens.typography['text-sm'].lineHeight,
-                    letterSpacing: tokens.typography['text-sm'].letterSpacing,
-                }],
-                base: [tokens.typography['text-base'].fontSize, {
-                    lineHeight: tokens.typography['text-base'].lineHeight,
-                    letterSpacing: tokens.typography['text-base'].letterSpacing,
-                }],
-                lg: [tokens.typography['text-lg'].fontSize, {
-                    lineHeight: tokens.typography['text-lg'].lineHeight,
-                    letterSpacing: tokens.typography['text-lg'].letterSpacing,
-                }],
-                xl: [tokens.typography['text-xl'].fontSize, {
-                    lineHeight: tokens.typography['text-xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-xl'].letterSpacing,
-                }],
-                '2xl': [tokens.typography['text-2xl'].fontSize, {
-                    lineHeight: tokens.typography['text-2xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-2xl'].letterSpacing,
-                }],
-                '3xl': [tokens.typography['text-3xl'].fontSize, {
-                    lineHeight: tokens.typography['text-3xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-3xl'].letterSpacing,
-                }],
-                '4xl': [tokens.typography['text-4xl'].fontSize, {
-                    lineHeight: tokens.typography['text-4xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-4xl'].letterSpacing,
-                }],
-                '5xl': [tokens.typography['text-5xl'].fontSize, {
-                    lineHeight: tokens.typography['text-5xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-5xl'].letterSpacing,
-                }],
-                '6xl': [tokens.typography['text-6xl'].fontSize, {
-                    lineHeight: tokens.typography['text-6xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-6xl'].letterSpacing,
-                }],
-                '7xl': [tokens.typography['text-7xl'].fontSize, {
-                    lineHeight: tokens.typography['text-7xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-7xl'].letterSpacing,
-                }],
-                '8xl': [tokens.typography['text-8xl'].fontSize, {
-                    lineHeight: tokens.typography['text-8xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-8xl'].letterSpacing,
-                }],
-                '9xl': [tokens.typography['text-9xl'].fontSize, {
-                    lineHeight: tokens.typography['text-9xl'].lineHeight,
-                    letterSpacing: tokens.typography['text-9xl'].letterSpacing,
-                }],
+                xs: [
+                    tokens.typography['text-xs'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-xs'].lineHeight,
+                        letterSpacing: tokens.typography['text-xs'].letterSpacing,
+                    },
+                ],
+                sm: [
+                    tokens.typography['text-sm'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-sm'].lineHeight,
+                        letterSpacing: tokens.typography['text-sm'].letterSpacing,
+                    },
+                ],
+                base: [
+                    tokens.typography['text-base'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-base'].lineHeight,
+                        letterSpacing: tokens.typography['text-base'].letterSpacing,
+                    },
+                ],
+                lg: [
+                    tokens.typography['text-lg'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-lg'].lineHeight,
+                        letterSpacing: tokens.typography['text-lg'].letterSpacing,
+                    },
+                ],
+                xl: [
+                    tokens.typography['text-xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-xl'].letterSpacing,
+                    },
+                ],
+                '2xl': [
+                    tokens.typography['text-2xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-2xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-2xl'].letterSpacing,
+                    },
+                ],
+                '3xl': [
+                    tokens.typography['text-3xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-3xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-3xl'].letterSpacing,
+                    },
+                ],
+                '4xl': [
+                    tokens.typography['text-4xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-4xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-4xl'].letterSpacing,
+                    },
+                ],
+                '5xl': [
+                    tokens.typography['text-5xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-5xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-5xl'].letterSpacing,
+                    },
+                ],
+                '6xl': [
+                    tokens.typography['text-6xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-6xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-6xl'].letterSpacing,
+                    },
+                ],
+                '7xl': [
+                    tokens.typography['text-7xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-7xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-7xl'].letterSpacing,
+                    },
+                ],
+                '8xl': [
+                    tokens.typography['text-8xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-8xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-8xl'].letterSpacing,
+                    },
+                ],
+                '9xl': [
+                    tokens.typography['text-9xl'].fontSize,
+                    {
+                        lineHeight: tokens.typography['text-9xl'].lineHeight,
+                        letterSpacing: tokens.typography['text-9xl'].letterSpacing,
+                    },
+                ],
             },
             lineHeight: {
                 3: tokens.lineHeights['leading-3'],
@@ -124,44 +161,44 @@ export default {
             keyframes: {
                 'accordion-down': {
                     from: { height: '0' },
-                    to: { height: 'var(--radix-accordion-content-height)' }
+                    to: { height: 'var(--radix-accordion-content-height)' },
                 },
                 'accordion-up': {
                     from: { height: 'var(--radix-accordion-content-height)' },
-                    to: { height: '0' }
+                    to: { height: '0' },
                 },
                 'fade-in': {
                     from: { opacity: 0 },
-                    to: { opacity: 1 }
+                    to: { opacity: 1 },
                 },
                 'fade-out': {
                     from: { opacity: 1 },
-                    to: { opacity: 0 }
+                    to: { opacity: 0 },
                 },
                 'slide-in-from-left-52': {
                     from: { transform: 'translateX(-13rem)' },
-                    to: { transform: 'translateX(0)' }
+                    to: { transform: 'translateX(0)' },
                 },
                 'slide-in-from-right-52': {
                     from: { transform: 'translateX(13rem)' },
-                    to: { transform: 'translateX(0)' }
+                    to: { transform: 'translateX(0)' },
                 },
                 'slide-out-to-left-52': {
                     from: { transform: 'translateX(0)' },
-                    to: { transform: 'translateX(-13rem)' }
+                    to: { transform: 'translateX(-13rem)' },
                 },
                 'slide-out-to-right-52': {
                     from: { transform: 'translateX(0)' },
-                    to: { transform: 'translateX(13rem)' }
+                    to: { transform: 'translateX(13rem)' },
                 },
                 'zoom-in-95': {
                     '0%': { opacity: 0, transform: 'scale(0.95)' },
-                    '100%': { opacity: 1, transform: 'scale(1)' }
+                    '100%': { opacity: 1, transform: 'scale(1)' },
                 },
                 'zoom-out-95': {
                     '0%': { opacity: 1, transform: 'scale(1)' },
-                    '100%': { opacity: 0, transform: 'scale(0.95)' }
-                }
+                    '100%': { opacity: 0, transform: 'scale(0.95)' },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
@@ -173,9 +210,9 @@ export default {
                 'slide-out-to-left': 'slide-out-to-left-52 0.3s ease-out',
                 'slide-out-to-right': 'slide-out-to-right-52 0.3s ease-out',
                 'zoom-in': 'zoom-in-95 0.2s ease-out',
-                'zoom-out': 'zoom-out-95 0.2s ease-out'
-            }
-        }
+                'zoom-out': 'zoom-out-95 0.2s ease-out',
+            },
+        },
     },
     plugins: [],
-}
+};

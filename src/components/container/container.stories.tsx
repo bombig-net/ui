@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Container } from './container'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Container } from './container';
 
 const meta = {
     title: 'Components/Container',
@@ -66,29 +67,29 @@ Use asChild to change the underlying element while maintaining container styles:
     </main>
 </Container>
 \`\`\`
-                `
-            }
-        }
+                `,
+            },
+        },
     },
     tags: ['autodocs'],
     argTypes: {
         asChild: {
             description: 'Change the default rendered element for the one passed as a child',
-            control: 'boolean'
+            control: 'boolean',
         },
         className: {
             description: 'Additional CSS classes to apply to the container',
-            control: 'text'
+            control: 'text',
         },
         children: {
             description: 'The content to be contained',
-            control: 'text'
-        }
-    }
-} satisfies Meta<typeof Container>
+            control: 'text',
+        },
+    },
+} satisfies Meta<typeof Container>;
 
-export default meta
-type Story = StoryObj<typeof Container>
+export default meta;
+type Story = StoryObj<typeof Container>;
 
 export const Default: Story = {
     args: {
@@ -96,9 +97,9 @@ export const Default: Story = {
             <div className="flex justify-center items-center border-2 border-neutral-300 bg-neutral-100 border-dashed rounded-lg h-32">
                 Contained Content
             </div>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const CustomMaxWidth: Story = {
     args: {
@@ -107,9 +108,9 @@ export const CustomMaxWidth: Story = {
             <div className="flex justify-center items-center border-2 border-neutral-300 bg-neutral-100 border-dashed rounded-lg h-32">
                 Narrower Container
             </div>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const WithBackground: Story = {
     args: {
@@ -118,9 +119,9 @@ export const WithBackground: Story = {
             <div className="flex justify-center items-center border-2 border-neutral-300 bg-white border-dashed rounded-lg h-32">
                 Container with Background
             </div>
-        )
-    }
-}
+        ),
+    },
+};
 
 export const AsMainElement: Story = {
     args: {
@@ -129,6 +130,6 @@ export const AsMainElement: Story = {
             <main className="flex justify-center items-center border-2 border-neutral-300 bg-neutral-100 border-dashed rounded-lg h-32">
                 Rendered as main element
             </main>
-        )
-    }
-} 
+        ),
+    },
+};
