@@ -8,6 +8,7 @@ import storybookPlugin from 'eslint-plugin-storybook';
 import tailwindPlugin from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
     eslint.configs.recommended,
     {
@@ -20,9 +21,46 @@ export default [
             'build/**',
             '.storybook/**',
             'public/**',
-            '*.config.js',
-            '*.config.ts',
         ],
+    },
+    // JavaScript config files
+    {
+        files: ['*.config.js', 'postcss.config.js', 'tailwind.config.js'],
+        languageOptions: {
+            globals: {
+                ...globals.node,
+                module: true,
+            },
+            sourceType: 'module',
+            ecmaVersion: 'latest',
+            parserOptions: {
+                ecmaVersion: 'latest',
+                sourceType: 'module',
+                allowImportExportEverywhere: true,
+                importAssertions: true,
+            },
+        },
+    },
+    // TypeScript config files
+    {
+        files: ['*.config.ts', 'tsup.config.ts'],
+        languageOptions: {
+            parser: tsParser,
+            parserOptions: {
+                project: './tsconfig.json',
+                ecmaVersion: 2022,
+                sourceType: 'module',
+            },
+        },
+        plugins: {
+            '@typescript-eslint': tseslint,
+        },
+        rules: {
+            '@typescript-eslint/no-unsafe-assignment': 'off',
+            '@typescript-eslint/no-unsafe-member-access': 'off',
+            '@typescript-eslint/no-unsafe-return': 'off',
+            '@typescript-eslint/no-unsafe-call': 'off',
+        },
     },
     {
         files: ['**/*.{ts,tsx}'],
@@ -32,9 +70,7 @@ export default [
                 project: './tsconfig.json',
                 ecmaVersion: 2022,
                 sourceType: 'module',
-                ecmaFeatures: {
-                    jsx: true,
-                },
+                ecmaFeatures: { jsx: true },
             },
             globals: {
                 ...globals.browser,
@@ -47,9 +83,18 @@ export default [
             '@typescript-eslint': tseslint,
             react: reactPlugin,
             'react-hooks': reactHooksPlugin,
-            storybook: storybookPlugin,
             tailwindcss: tailwindPlugin,
             import: importPlugin,
+        },
+        settings: {
+            react: { version: 'detect' },
+            'import/parsers': {
+                '@typescript-eslint/parser': ['.ts', '.tsx'],
+            },
+            'import/resolver': {
+                typescript: { alwaysTryTypes: true },
+                node: true,
+            },
         },
         rules: {
             // TypeScript strict rules
@@ -134,19 +179,40 @@ export default [
             eqeqeq: ['error', 'always'],
             curly: ['error', 'all'],
         },
-        settings: {
-            react: {
-                version: 'detect',
+    },
+    {
+        files: [
+            '**/*.test.{ts,tsx}',
+            '**/*.spec.{ts,tsx}',
+            'src/lib/test-utils.tsx',
+            'jest.setup.ts',
+        ],
+        languageOptions: {
+            globals: {
+                ...globals.jest,
+                jest: true,
+                expect: true,
+                describe: true,
+                it: true,
+                beforeEach: true,
+                afterEach: true,
             },
-            'import/parsers': {
-                '@typescript-eslint/parser': ['.ts', '.tsx'],
-            },
-            'import/resolver': {
-                typescript: {
-                    alwaysTryTypes: true,
-                },
-                node: true,
-            },
+        },
+        rules: {
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-unsafe-assignment': 'off',
+            '@typescript-eslint/no-unsafe-member-access': 'off',
+            '@typescript-eslint/no-unsafe-call': 'off',
+            '@typescript-eslint/unbound-method': 'off',
+        },
+    },
+    {
+        files: ['**/*.stories.{ts,tsx}'],
+        plugins: { storybook: storybookPlugin },
+        rules: {
+            ...storybookPlugin.configs.recommended.rules,
+            'storybook/hierarchy-separator': 'error',
+            'storybook/default-exports': 'error',
         },
     },
 ];

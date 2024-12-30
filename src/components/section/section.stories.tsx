@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Container } from '../container/container';
+import { Container } from '@/components/container/container';
 
 import { Section } from './section';
 

@@ -25,11 +25,21 @@
         "useUnknownInCatchVariables": true,
         "allowUnreachableCode": false,
         "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"]
-        }
+        },
+        "types": ["jest", "@testing-library/jest-dom", "node"]
     },
-    "include": ["src"],
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.d.ts",
+        "jest.setup.ts",
+        "jest.config.js",
+        "*.config.ts",
+        "*.config.js"
+    ],
     "exclude": ["node_modules", "dist"]
 }

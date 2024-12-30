@@ -1,1 +1,2 @@
-pnpm test && pnpm lint-staged
+# Run lint-staged for staged files
+pnpm lint-staged

@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-import rawTokens from './tokens.json' assert { type: 'json' };
-import { groupTokensByType } from './src/lib/groupTokensByType.ts';
+const rawTokens = require('./tokens.json');
+const { groupTokensByType } = require('./src/lib/groupTokensByType.ts');
 
 const tokens = groupTokensByType(rawTokens);
 
-export default {
+module.exports = {
     darkMode: 'class',
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
