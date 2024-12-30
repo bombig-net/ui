@@ -52,8 +52,14 @@ export interface AccordionContentProps
     extends RadixAccordion.AccordionContentProps,
         VariantProps<typeof accordionContentVariants> {}
 
-export function Accordion(props: AccordionProps): React.JSX.Element {
-    return <RadixAccordion.Root {...props} />;
+export function Accordion({ className, ...props }: AccordionProps): React.JSX.Element {
+    return (
+        <RadixAccordion.Root
+            className={cn(className)}
+            data-testid="accordion"
+            {...(props as RadixAccordion.AccordionSingleProps)}
+        />
+    );
 }
 
 export function AccordionItem({ className, ...props }: AccordionItemProps): React.JSX.Element {
