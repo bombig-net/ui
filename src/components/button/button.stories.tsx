@@ -7,7 +7,43 @@ const meta = {
     parameters: {
         docs: {
             description: {
-                component: 'A button component that follows WAI-ARIA Button pattern and provides various visual styles.'
+                component: `
+A button component built on top of React Aria's Button component that provides a complete set of button behaviors and accessibility features.
+
+### Features
+- Full keyboard navigation support
+- ARIA attributes automatically managed
+- Focus management
+- Press events and interactions
+- Support for disabled state
+- Three visual variants: default, cta, and outline
+- Customizable styling through className
+
+### Accessibility
+- Follows WAI-ARIA Button pattern
+- Proper focus handling and indication
+- Keyboard interaction support
+- Screen reader announcements
+- Disabled state management
+
+### Usage
+\`\`\`tsx
+import { Button } from '@bombig/ui'
+
+function Example() {
+    return (
+        <Button 
+            variant="cta"
+            onPress={() => alert('Button pressed!')}
+        >
+            Press me
+        </Button>
+    )
+}
+\`\`\`
+
+For more details about the underlying component, see the [React Aria Button documentation](https://react-spectrum.adobe.com/react-aria/Button.html).
+                `
             }
         }
     },
@@ -16,12 +52,7 @@ const meta = {
         variant: {
             description: 'The visual style variant of the button',
             control: 'select',
-            options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link']
-        },
-        size: {
-            description: 'The size variant of the button',
-            control: 'select',
-            options: ['default', 'sm', 'lg', 'icon']
+            options: ['default', 'cta', 'outline']
         },
         children: {
             description: 'The content to display inside the button',
@@ -30,6 +61,38 @@ const meta = {
         isDisabled: {
             description: 'Whether the button is disabled',
             control: 'boolean'
+        },
+        onPress: {
+            description: 'Handler called when the press is released over the target',
+            action: 'pressed'
+        },
+        onPressStart: {
+            description: 'Handler called when a press interaction starts',
+            action: 'pressStart'
+        },
+        onPressEnd: {
+            description: 'Handler called when a press interaction ends',
+            action: 'pressEnd'
+        },
+        onPressChange: {
+            description: 'Handler called when the press state changes',
+            action: 'pressChange'
+        },
+        onPressUp: {
+            description: 'Handler called when a press is released over the target',
+            action: 'pressUp'
+        },
+        preventFocusOnPress: {
+            description: 'Whether to prevent focus when clicking with a mouse',
+            control: 'boolean'
+        },
+        excludeFromTabOrder: {
+            description: 'Whether to exclude the element from the tab order',
+            control: 'boolean'
+        },
+        className: {
+            description: 'Additional CSS classes to apply to the button. Use this to customize the button\'s appearance.',
+            control: 'text'
         }
     }
 } satisfies Meta<typeof Button>
@@ -39,70 +102,60 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
     args: {
-        children: 'Button',
+        children: 'Default Button',
         variant: 'default'
     }
 }
 
-export const Secondary: Story = {
+export const CTA: Story = {
     args: {
-        children: 'Secondary',
-        variant: 'secondary'
-    }
-}
-
-export const Destructive: Story = {
-    args: {
-        children: 'Destructive',
-        variant: 'destructive'
+        children: 'CTA Button',
+        variant: 'cta'
     }
 }
 
 export const Outline: Story = {
     args: {
-        children: 'Outline',
+        children: 'Outline Button',
         variant: 'outline'
-    }
-}
-
-export const Ghost: Story = {
-    args: {
-        children: 'Ghost',
-        variant: 'ghost'
-    }
-}
-
-export const Link: Story = {
-    args: {
-        children: 'Link',
-        variant: 'link'
-    }
-}
-
-export const Small: Story = {
-    args: {
-        children: 'Small',
-        size: 'sm'
-    }
-}
-
-export const Large: Story = {
-    args: {
-        children: 'Large',
-        size: 'lg'
     }
 }
 
 export const Disabled: Story = {
     args: {
-        children: 'Disabled',
+        children: 'Cannot press',
         isDisabled: true
     }
 }
 
-export const WithIcon: Story = {
+export const PreventFocus: Story = {
     args: {
-        children: '→',
-        size: 'icon'
+        children: 'No focus on mouse click',
+        preventFocusOnPress: true
+    }
+}
+
+export const ExcludeFromTabOrder: Story = {
+    args: {
+        children: 'Not in tab order',
+        excludeFromTabOrder: true
+    }
+}
+
+export const WithPressHandlers: Story = {
+    args: {
+        children: 'Press handlers demo',
+        onPress: () => console.log('Pressed'),
+        onPressStart: () => console.log('Press started'),
+        onPressEnd: () => console.log('Press ended'),
+        onPressChange: isPressed => console.log('Press state:', isPressed),
+        onPressUp: () => console.log('Press up')
+    }
+}
+
+export const CustomStyling: Story = {
+    args: {
+        children: 'Custom styles',
+        className: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 border border-neutral-300'
     }
 }

@@ -44,9 +44,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Generate design tokens
-        run: pnpm style-dictionary
-
       - name: Build package
         run: pnpm build
 
