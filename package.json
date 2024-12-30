@@ -37,6 +37,7 @@
         "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
         "typecheck": "tsc --noEmit",
         "validate": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test",
+        "validate:quick": "tsc --noEmit --incremental && eslint . --cache --report-unused-disable-directives --max-warnings 0 && pnpm format:check && pnpm test",
         "test": "jest --passWithNoTests --coverage",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage"
