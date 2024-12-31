@@ -47,12 +47,19 @@ const linkVariants = cva(
 
 export interface LinkProps
     extends React.ComponentPropsWithoutRef<typeof AriaLink>,
-        VariantProps<typeof linkVariants> {}
+        VariantProps<typeof linkVariants> {
+    'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time';
+}
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-    ({ className, variant, ...props }, ref): React.ReactElement => {
+    ({ className, variant, 'aria-current': ariaCurrent, ...props }, ref): React.ReactElement => {
         return (
-            <AriaLink ref={ref} className={cn(linkVariants({ variant }), className)} {...props} />
+            <AriaLink
+                ref={ref}
+                className={cn(linkVariants({ variant }), className)}
+                aria-current={ariaCurrent}
+                {...props}
+            />
         );
     }
 );
