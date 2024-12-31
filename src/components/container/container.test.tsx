@@ -94,6 +94,24 @@ describe('Container', () => {
             const section = screen.getByText('Content').parentElement;
             expect(section).toHaveAttribute('aria-label', 'main section');
         });
+
+        it('renders as Fragment when asChild is true', () => {
+            render(
+                <Container asChild>
+                    <div>Content</div>
+                </Container>
+            );
+            expect(screen.getByText('Content')).toBeInTheDocument();
+        });
+
+        it('forwards props when asChild is true', () => {
+            render(
+                <Container asChild>
+                    <div data-testid="test-div">Content</div>
+                </Container>
+            );
+            expect(screen.getByTestId('test-div')).toBeInTheDocument();
+        });
     });
 
     it('should have no accessibility violations with semantic HTML', async () => {

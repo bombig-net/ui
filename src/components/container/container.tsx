@@ -25,19 +25,13 @@ export function Container({
     ...props
 }: ContainerProps): React.JSX.Element {
     const Comp = asChild ? React.Fragment : 'div';
+    const childProps = asChild
+        ? { children }
+        : {
+              ...props,
+              className: cn('mx-auto w-full', 'max-w-7xl px-4 sm:px-6 lg:px-8', className),
+              children,
+          };
 
-    return (
-        <Comp
-            {...props}
-            className={cn(
-                // Base styles
-                'w-full mx-auto',
-                // Default max-width and padding that can be overridden via className
-                'max-w-7xl px-4 sm:px-6 lg:px-8',
-                className
-            )}
-        >
-            {children}
-        </Comp>
-    );
+    return <Comp {...childProps} />;
 }
