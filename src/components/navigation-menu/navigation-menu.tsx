@@ -21,7 +21,10 @@ const navigationMenuTriggerStyle = cva(
     }
 );
 
-export type NavigationMenuProps = RadixNavigationMenu.NavigationMenuProps;
+export type NavigationMenuProps = RadixNavigationMenu.NavigationMenuProps & {
+    value?: string;
+    defaultValue?: string;
+};
 export type NavigationMenuListProps = RadixNavigationMenu.NavigationMenuListProps;
 export type NavigationMenuItemProps = RadixNavigationMenu.NavigationMenuItemProps;
 export type NavigationMenuTriggerProps = RadixNavigationMenu.NavigationMenuTriggerProps &
@@ -30,6 +33,7 @@ export type NavigationMenuContentProps = RadixNavigationMenu.NavigationMenuConte
 export type NavigationMenuLinkProps = RadixNavigationMenu.NavigationMenuLinkProps;
 export type NavigationMenuViewportProps = RadixNavigationMenu.NavigationMenuViewportProps;
 export type NavigationMenuIndicatorProps = RadixNavigationMenu.NavigationMenuIndicatorProps;
+export type NavigationMenuSubProps = RadixNavigationMenu.NavigationMenuSubProps;
 
 export const NavigationMenu = forwardRef<HTMLElement, NavigationMenuProps>(
     ({ className, children, ...props }, ref) => (
@@ -139,3 +143,12 @@ export const NavigationMenuIndicator = forwardRef<HTMLDivElement, NavigationMenu
     )
 );
 NavigationMenuIndicator.displayName = 'NavigationMenuIndicator';
+
+export const NavigationMenuSub = forwardRef<HTMLDivElement, NavigationMenuSubProps>(
+    ({ className, children, ...props }, ref) => (
+        <RadixNavigationMenu.Sub ref={ref} className={cn('relative z-10', className)} {...props}>
+            {children}
+        </RadixNavigationMenu.Sub>
+    )
+);
+NavigationMenuSub.displayName = 'NavigationMenuSub';
