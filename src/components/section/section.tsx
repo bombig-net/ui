@@ -24,10 +24,23 @@ export function Section({
     children,
     ...props
 }: SectionProps): React.JSX.Element {
-    const Comp = asChild ? React.Fragment : 'section';
+    if (asChild && React.isValidElement(children)) {
+        const child = children as React.ReactElement<{ className?: string }>;
+        return React.cloneElement(child, {
+            ...props,
+            className: cn(
+                // Base styles
+                'w-full',
+                // Default spacing that can be overridden via className
+                'py-8 md:py-12 lg:py-16',
+                className,
+                child.props.className
+            ),
+        } as React.HTMLAttributes<HTMLElement>);
+    }
 
     return (
-        <Comp
+        <section
             {...props}
             className={cn(
                 // Base styles
@@ -38,6 +51,6 @@ export function Section({
             )}
         >
             {children}
-        </Comp>
+        </section>
     );
 }
