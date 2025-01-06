@@ -151,6 +151,7 @@ module.exports = {
                 loose: tokens.lineHeights['leading-loose'],
             },
             letterSpacing: {
+                tightest: tokens.letterSpacing['tracking-tightest'],
                 tighter: tokens.letterSpacing['tracking-tighter'],
                 tight: tokens.letterSpacing['tracking-tight'],
                 normal: tokens.letterSpacing['tracking-normal'],
