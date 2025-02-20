@@ -19,7 +19,6 @@ export default [
             '.next/**',
             'coverage/**',
             'build/**',
-            '.storybook/**',
             'public/**',
         ],
     },
@@ -207,7 +206,7 @@ export default [
         },
     },
     {
-        files: ['**/*.stories.{ts,tsx}'],
+        files: ['**/*.stories.{ts,tsx}', '.storybook/**/*.{js,jsx}'],
         plugins: { storybook: storybookPlugin },
         rules: {
             ...storybookPlugin.configs.recommended.rules,
