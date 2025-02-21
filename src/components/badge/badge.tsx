@@ -21,8 +21,8 @@ const badgeContentStyles = [
     'rounded-full',
     'min-w-[20px] h-5',
     'px-1.5',
-    'text-xs font-medium',
-    'bg-neutral-900 text-white',
+    'text-xs font-serif',
+    'bg-meteor-600 text-white',
     'top-0 right-0',
     '-translate-y-1/2 translate-x-1/2',
     // Invisible state
