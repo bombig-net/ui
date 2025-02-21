@@ -39,7 +39,8 @@
         "jest.setup.ts",
         "jest.config.js",
         "*.config.ts",
-        "*.config.js"
+        "*.config.js",
+        ".storybook/**/*"
     ],
     "exclude": ["node_modules", "dist"]
 }

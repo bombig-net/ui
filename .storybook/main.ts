@@ -1,5 +1,8 @@
-import type { StorybookConfig } from '@storybook/react-vite';
 import { resolve } from 'path';
+
+import type { StorybookConfig } from '@storybook/react-vite';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
 
 const config: StorybookConfig = {
     stories: ['../src/components/**/*.stories.@(ts|tsx)'],
@@ -15,7 +18,10 @@ const config: StorybookConfig = {
     core: {
         builder: '@storybook/builder-vite',
     },
+    staticDirs: ['./public'],
     async viteFinal(config) {
+        await Promise.resolve();
+
         return {
             ...config,
             resolve: {
@@ -25,7 +31,7 @@ const config: StorybookConfig = {
             },
             css: {
                 postcss: {
-                    plugins: [require('tailwindcss'), require('autoprefixer')],
+                    plugins: [tailwindcss, autoprefixer],
                 },
             },
         };

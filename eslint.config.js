@@ -20,7 +20,6 @@ export default [
             'coverage/**',
             'build/**',
             'public/**',
-            '.storybook/**',
         ],
     },
     // JavaScript config files
@@ -213,6 +212,13 @@ export default [
             ...storybookPlugin.configs.recommended.rules,
             'storybook/hierarchy-separator': 'error',
             'storybook/default-exports': 'error',
+        },
+    },
+    {
+        files: ['.storybook/**/*.{js,ts}'],
+        plugins: { storybook: storybookPlugin },
+        rules: {
+            ...storybookPlugin.configs.recommended.rules,
         },
     },
 ];
