@@ -1,6 +1,3 @@
-# Ignore commercial fonts
-.storybook/public/fonts/Euclid*
-
 # Dependencies
 node_modules
 .pnp
