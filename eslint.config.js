@@ -20,6 +20,7 @@ export default [
             'coverage/**',
             'build/**',
             'public/**',
+            '.storybook/**',
         ],
     },
     // JavaScript config files
@@ -206,7 +207,7 @@ export default [
         },
     },
     {
-        files: ['**/*.stories.{ts,tsx}', '.storybook/**/*.{js,jsx}'],
+        files: ['**/*.stories.{ts,tsx}'],
         plugins: { storybook: storybookPlugin },
         rules: {
             ...storybookPlugin.configs.recommended.rules,

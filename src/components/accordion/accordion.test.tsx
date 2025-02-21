@@ -32,7 +32,7 @@ describe('Accordion component', () => {
             const [firstTrigger, secondTrigger] = triggers as [HTMLElement, HTMLElement];
 
             expect([firstTrigger, secondTrigger]).toHaveLength(2);
-            expect(firstTrigger).toHaveClass('text-neutral-900'); // Default variant
+            expect(firstTrigger).toHaveClass('text-white'); // Default variant
             expect(firstTrigger).toHaveAttribute('aria-expanded', 'false');
         });
 
@@ -49,7 +49,7 @@ describe('Accordion component', () => {
             );
 
             const trigger = screen.getByRole('button', { name: 'Muted Section' });
-            expect(trigger).toHaveClass('text-neutral-600');
+            expect(trigger).toHaveClass('text-neutral-400');
         });
 
         it('merges custom className with default styles', () => {

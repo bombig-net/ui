@@ -7,12 +7,12 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@/lib/cn';
 
 const accordionTriggerVariants = cva(
-    'flex w-full items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+    'flex w-full items-center justify-between py-4 text-sm md:text-base font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
     {
         variants: {
             variant: {
-                default: 'text-neutral-900',
-                muted: 'text-neutral-600',
+                default: 'text-white',
+                muted: 'text-neutral-400',
             },
         },
         defaultVariants: {
@@ -22,11 +22,11 @@ const accordionTriggerVariants = cva(
 );
 
 const accordionContentVariants = cva(
-    'text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden',
+    'overflow-hidden font-serif text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
     {
         variants: {
             variant: {
-                default: 'text-neutral-700',
+                default: 'text-neutral-300',
                 muted: 'text-neutral-500',
             },
         },
