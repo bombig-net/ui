@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1740145848978" clover="3.2.0">
-  <project timestamp="1740145848978" name="All files">
+<coverage generated="1740398936531" clover="3.2.0">
+  <project timestamp="1740398936531" name="All files">
     <metrics statements="300" coveredstatements="289" conditionals="153" coveredconditionals="140" methods="68" coveredmethods="63" elements="521" coveredelements="492" complexity="0" loc="300" ncloc="300" packages="15" files="17" classes="17"/>
     <package name="components.accordion">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -204,9 +204,9 @@
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="56" count="22" type="stmt"/>
-        <line num="66" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="51" count="22" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.navigation-menu">
