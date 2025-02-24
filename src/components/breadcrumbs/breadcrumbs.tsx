@@ -10,7 +10,7 @@ import { cn } from '@/lib/cn';
 const breadcrumbsStyles = [
     'flex items-center flex-wrap',
     'list-none m-0 p-0',
-    'text-base text-neutral-600',
+    'text-base',
     'gap-2 gap-y-1',
 ];
 
@@ -19,7 +19,7 @@ const breadcrumbStyles = [
     'after:content-["/"] after:select-none after:text-neutral-300 after:mx-[0.4em] after:inline-block',
     'last:after:hidden',
     'whitespace-nowrap',
-    '[&_span[aria-current]]:text-neutral-600',
+    '[&_span[aria-current]]:opacity-50',
 ];
 
 export type BreadcrumbsProps = React.ComponentPropsWithoutRef<typeof AriaBreadcrumbs>;
