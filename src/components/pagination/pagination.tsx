@@ -33,7 +33,8 @@ const paginationItemVariants = cva(
             },
             variant: {
                 default: 'hover:bg-neutral-100',
-                outline: 'border border-neutral-300 hover:bg-neutral-100',
+                outline:
+                    'border-2 border-duck-400 bg-transparent text-white hover:bg-duck-300 hover:border-duck-300 hover:text-duck-950',
             },
         },
         defaultVariants: {

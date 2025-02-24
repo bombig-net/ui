@@ -65,7 +65,8 @@ describe('Pagination', () => {
         expect(buttons[0]).toHaveClass('hover:bg-neutral-100');
 
         rerender(<Pagination total={5} page={1} variant="outline" />);
-        expect(buttons[0]).toHaveClass('border-neutral-300');
+        expect(buttons[0]).toHaveClass('border-2');
+        expect(buttons[0]).toHaveClass('border-duck-400');
     });
 
     it('can hide controls', () => {
