@@ -1,3 +1,4 @@
+import React from 'react';
 import '../src/styles/globals.css';
 
 /** @type { import('@storybook/react').Preview } */
@@ -20,6 +21,14 @@ const preview = {
             },
         },
     },
+    decorators: [
+        (Story) =>
+            React.createElement(
+                'div',
+                { className: 'font-serif text-neutral-300 text-base' },
+                React.createElement(Story)
+            ),
+    ],
 };
 
 export default preview;

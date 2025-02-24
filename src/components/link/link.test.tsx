@@ -14,7 +14,7 @@ describe('Link component', () => {
             expect(link).toBeInTheDocument();
             expect(link).toHaveAttribute('href', 'https://example.com');
             // Default variant should have base styles
-            expect(link).toHaveClass('text-neutral-900');
+            expect(link).toHaveClass('text-white');
         });
 
         it('applies muted variant styles correctly', () => {
@@ -25,7 +25,7 @@ describe('Link component', () => {
             );
             const link = screen.getByRole('link', { name: 'Muted Link' });
 
-            expect(link).toHaveClass('text-neutral-600');
+            expect(link).toHaveClass('text-neutral-300');
         });
 
         it('applies subtle variant styles correctly', () => {
@@ -37,7 +37,7 @@ describe('Link component', () => {
             const link = screen.getByRole('link', { name: 'Subtle Link' });
 
             expect(link).not.toHaveClass('underline');
-            expect(link).toHaveClass('text-neutral-600');
+            expect(link).toHaveClass('text-neutral-300');
         });
 
         it('handles disabled state correctly', () => {

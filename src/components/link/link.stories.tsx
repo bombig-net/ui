@@ -100,7 +100,7 @@ export const InlineText: Story = {
     },
     decorators: [
         (Story: () => React.JSX.Element): React.JSX.Element => (
-            <p className="text-neutral-600">
+            <p>
                 This is a paragraph with an {Story()} in the middle of the text to demonstrate how
                 it flows with the content.
             </p>

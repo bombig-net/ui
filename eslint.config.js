@@ -215,10 +215,12 @@ export default [
         },
     },
     {
-        files: ['.storybook/**/*.{js,ts}'],
+        files: ['.storybook/**/*.{js,ts,jsx,tsx}'],
         plugins: { storybook: storybookPlugin },
         rules: {
             ...storybookPlugin.configs.recommended.rules,
+            ...storybookPlugin.configs.csf.rules,
+            ...storybookPlugin.configs['csf-strict'].rules,
         },
     },
 ];

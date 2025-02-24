@@ -10,16 +10,16 @@ const linkVariants = cva(
         // Base styles
         'inline-flex items-center justify-center gap-2',
         'cursor-pointer select-none',
-        'text-base leading-none',
+        'text-base font-serif font-medium leading-none',
         'outline-none',
         'transition-all duration-200',
         // Default link styling
-        'text-neutral-900 underline decoration-neutral-500/60 underline-offset-4 decoration-solid',
+        'text-white underline decoration-white/60 underline-offset-4 decoration-solid',
         // Interactive states
-        'hover:decoration-neutral-900 hover:decoration-wavy',
-        'data-[pressed]:text-neutral-700 data-[pressed]:decoration-neutral-700',
+        'hover:text-duck-400 hover:decoration-duck-400/60 hover:decoration-wavy',
+        'data-[pressed]:text-duck-300 data-[pressed]:decoration-duck-300/60',
         // Focus visible
-        'data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-neutral-900 data-[focus-visible]:ring-offset-2',
+        'data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-duck-400 data-[focus-visible]:ring-offset-2',
         // Disabled state
         'data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[disabled]:hover:decoration-neutral-500/60 data-[disabled]:hover:decoration-solid',
     ],
@@ -27,15 +27,10 @@ const linkVariants = cva(
         variants: {
             variant: {
                 default: '',
-                muted: [
-                    'text-neutral-600 decoration-neutral-400/60',
-                    'hover:text-neutral-900 hover:decoration-neutral-600 hover:decoration-wavy',
-                    'data-[pressed]:text-neutral-500 data-[pressed]:decoration-neutral-500',
-                ],
+                muted: ['text-neutral-300 decoration-neutral-300/60'],
                 subtle: [
-                    'no-underline text-neutral-600',
-                    'hover:text-neutral-900 hover:underline hover:decoration-neutral-600 hover:decoration-wavy',
-                    'data-[pressed]:text-neutral-500 data-[pressed]:decoration-neutral-500',
+                    'no-underline text-neutral-300 decoration-neutral-300/60',
+                    'hover:underline',
                 ],
             },
         },
