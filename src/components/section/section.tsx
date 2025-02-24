@@ -32,7 +32,7 @@ export function Section({
                 // Base styles
                 'w-full',
                 // Default spacing that can be overridden via className
-                'py-8 md:py-12 lg:py-16',
+                'py-6 md:py-12 lg:py-24',
                 className,
                 child.props.className
             ),
@@ -46,7 +46,7 @@ export function Section({
                 // Base styles
                 'w-full',
                 // Default spacing that can be overridden via className
-                'py-8 md:py-12 lg:py-16',
+                'py-6 md:py-12 lg:py-24',
                 className
             )}
         >

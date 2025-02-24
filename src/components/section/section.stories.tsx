@@ -17,16 +17,22 @@ but with a simplified API focused on composition through Tailwind classes.
 
 ### Features
 - Semantic \`<section>\` element by default
-- Responsive vertical padding that adapts to screen size
+- Progressive responsive padding that scales with screen size
 - Support for polymorphic rendering with asChild
 - Fully customizable through className
 
 ### Default Behavior
 - Full width layout
-- Responsive vertical padding:
-  - Mobile: 32px (py-8)
-  - Tablet: 48px (md:py-12)
-  - Desktop: 64px (lg:py-16)
+- Progressive responsive padding:
+  - Mobile (< 768px): 24px (py-6)
+  - Tablet (≥ 768px): 48px (md:py-12)
+  - Desktop (≥ 1024px): 96px (lg:py-24)
+
+The padding scales progressively, doubling at each breakpoint to create a natural visual hierarchy:
+- Mobile → Tablet: 24px → 48px (2x)
+- Tablet → Desktop: 48px → 96px (2x)
+
+This scaling ensures comfortable spacing across all devices while preserving valuable screen space on mobile.
 
 ### Usage
 \`\`\`tsx
@@ -37,7 +43,7 @@ function Example() {
         <Section>
             <Container>
                 <h2>Section Title</h2>
-                <p>Section content that will have consistent vertical spacing.</p>
+                <p>Section content with responsive vertical spacing.</p>
             </Container>
         </Section>
     )
@@ -49,7 +55,7 @@ You can override any of the default styles using className:
 
 \`\`\`tsx
 // Custom padding
-<Section className="py-16 md:py-24">
+<Section className="py-8 md:py-16 lg:py-32">
     Content
 </Section>
 
@@ -81,6 +87,14 @@ Sections are often used with Containers to create a consistent layout structure:
     </Container>
 </Section>
 \`\`\`
+
+### Responsive Design
+The section's padding is designed to create a comfortable reading experience across all devices:
+- Mobile devices get compact spacing to maximize content area
+- Tablet devices get moderate spacing for better content separation
+- Desktop screens get generous spacing for optimal readability and visual hierarchy
+
+This progressive scaling helps maintain visual consistency while adapting to each device's constraints and capabilities.
                 `,
             },
         },

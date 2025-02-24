@@ -36,7 +36,7 @@ describe('Section', () => {
 
         const article = screen.getByTestId('test-article');
         expect(article.tagName).toBe('ARTICLE');
-        expect(article).toHaveClass('w-full', 'py-8', 'md:py-12', 'lg:py-16');
+        expect(article).toHaveClass('w-full', 'py-6', 'md:py-12', 'lg:py-24');
     });
 
     it('merges classNames when asChild is true', () => {
@@ -99,18 +99,18 @@ describe('Section', () => {
         );
 
         const section = screen.getByText('Test content').parentElement;
-        expect(section).toHaveClass('py-8', 'md:py-12', 'lg:py-16');
+        expect(section).toHaveClass('py-6', 'md:py-12', 'lg:py-24');
     });
 
     it('allows padding classes to be overridden', () => {
         render(
-            <Section className="py-16 md:py-24">
+            <Section className="py-16 md:py-24 lg:py-32">
                 <div>Test content</div>
             </Section>
         );
 
         const section = screen.getByText('Test content').parentElement;
-        expect(section).toHaveClass('py-16', 'md:py-24');
-        expect(section).not.toHaveClass('py-8', 'md:py-12', 'lg:py-16');
+        expect(section).toHaveClass('py-16', 'md:py-24', 'lg:py-32');
+        expect(section).not.toHaveClass('py-6', 'md:py-12', 'lg:py-24');
     });
 });
