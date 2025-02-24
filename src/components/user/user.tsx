@@ -74,10 +74,10 @@ export function User({
                     <span className="text-neutral-600">{avatarFallback || initials}</span>
                 )}
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
                 <span className="font-medium text-sm leading-none">{name}</span>
                 {description ? (
-                    <span className="text-neutral-500 text-sm leading-none">{description}</span>
+                    <span className="text-neutral-400 text-xs leading-none">{description}</span>
                 ) : null}
             </div>
         </div>

@@ -14,52 +14,52 @@ import { cn } from '@/lib/cn';
 const tableStyles = [
     // Base styles
     'w-full border-collapse',
-    'border border-neutral-200 rounded-lg',
+    'border border-white/20 rounded-lg',
     'outline-none',
     // Focus styles
-    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-neutral-900 data-[focus-visible]:outline-offset-2',
+    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-duck-400 data-[focus-visible]:outline-offset-2',
 ];
 
-const headerStyles = ['border-b border-neutral-200', 'bg-neutral-50'];
+const headerStyles = ['border-b border-white/20', 'bg-white/5'];
 
 const columnStyles = [
     // Base styles
-    'p-3 text-sm font-medium text-neutral-900',
+    'p-3 text-sm font-medium text-white',
     'text-left',
     'outline-none',
     'group/column',
     // Interactive states for sortable columns
     'data-[sortable=true]:cursor-pointer',
-    'data-[sortable=true]:hover:bg-neutral-100',
-    'data-[sortable=true]:focus-visible:bg-neutral-100',
+    'data-[sortable=true]:hover:bg-white/10',
+    'data-[sortable=true]:focus-visible:bg-white/10',
     // Focus styles
-    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-neutral-900 data-[focus-visible]:outline-offset-[-2px]',
+    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-duck-400 data-[focus-visible]:outline-offset-[-2px]',
     // Sort direction indicators
     'data-[sortable=true]:relative data-[sortable=true]:pr-6',
     'data-[sorted=true]:after:absolute data-[sorted=true]:after:right-2 data-[sorted=true]:after:top-1/2 data-[sorted=true]:after:-translate-y-1/2',
-    'data-[sort-direction=ascending]:after:content-["↑"]',
-    'data-[sort-direction=descending]:after:content-["↓"]',
+    'data-[sort-direction=ascending]:after:content-["↑"] data-[sort-direction=ascending]:after:text-duck-400',
+    'data-[sort-direction=descending]:after:content-["↓"] data-[sort-direction=descending]:after:text-duck-400',
     // Unsorted indicator on hover
-    'data-[sortable=true]:not([data-sorted=true]):hover:after:content-["↕"] data-[sortable=true]:not([data-sorted=true]):hover:after:absolute data-[sortable=true]:not([data-sorted=true]):hover:after:right-2 data-[sortable=true]:not([data-sorted=true]):hover:after:top-1/2 data-[sortable=true]:not([data-sorted=true]):hover:after:-translate-y-1/2 data-[sortable=true]:not([data-sorted=true]):hover:after:text-neutral-400',
+    'data-[sortable=true]:not([data-sorted=true]):hover:after:content-["↕"] data-[sortable=true]:not([data-sorted=true]):hover:after:absolute data-[sortable=true]:not([data-sorted=true]):hover:after:right-2 data-[sortable=true]:not([data-sorted=true]):hover:after:top-1/2 data-[sortable=true]:not([data-sorted=true]):hover:after:-translate-y-1/2 data-[sortable=true]:not([data-sorted=true]):hover:after:text-white/60',
 ];
 
-const bodyStyles = ['divide-y divide-neutral-200'];
+const bodyStyles = ['divide-y divide-white/20'];
 
 const rowStyles = [
     'outline-none',
     // Interactive states
-    'data-[selected]:bg-neutral-100',
-    'data-[pressed]:bg-neutral-50',
-    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-neutral-900 data-[focus-visible]:outline-offset-[-2px]',
+    'data-[selected]:bg-duck-400/20',
+    'data-[pressed]:bg-white/5',
+    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-duck-400 data-[focus-visible]:outline-offset-[-2px]',
     // Disabled state
     'data-[disabled]:opacity-50',
 ];
 
 const cellStyles = [
-    'p-3 text-sm text-neutral-600',
+    'p-3 text-sm text-white/90',
     'outline-none',
     // Focus styles
-    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-neutral-900 data-[focus-visible]:outline-offset-[-2px]',
+    'data-[focus-visible]:outline-2 data-[focus-visible]:outline-duck-400 data-[focus-visible]:outline-offset-[-2px]',
 ];
 
 export type TableProps = React.ComponentPropsWithoutRef<typeof AriaTable>;
