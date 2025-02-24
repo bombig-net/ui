@@ -53,7 +53,7 @@ For more details about the underlying component, see the [React Aria Button docu
         variant: {
             description: 'The visual style variant of the button',
             control: 'select',
-            options: ['default', 'cta', 'outline'],
+            options: ['default', 'outline'],
         },
         children: {
             description: 'The content to display inside the button',
@@ -106,13 +106,6 @@ export const Default: Story = {
     args: {
         children: 'Default Button',
         variant: 'default',
-    },
-};
-
-export const CTA: Story = {
-    args: {
-        children: 'CTA Button',
-        variant: 'cta',
     },
 };
 

@@ -15,7 +15,7 @@ const commentVariants = cva(
             variant: {
                 default: '',
                 ghost: 'opacity-75',
-                highlight: 'bg-neutral-50 p-4 rounded-lg',
+                highlight: 'bg-neutral-800 p-4 rounded-lg',
             },
         },
         defaultVariants: {

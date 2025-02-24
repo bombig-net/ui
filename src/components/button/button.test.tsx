@@ -20,13 +20,11 @@ describe('Button', () => {
 
     it('renders with different variants', () => {
         const { rerender } = render(<Button variant="default">Default</Button>);
-        expect(screen.getByRole('button')).toHaveClass('bg-neutral-900');
-
-        rerender(<Button variant="cta">CTA</Button>);
-        expect(screen.getByRole('button')).toHaveClass('bg-neutral-950');
+        expect(screen.getByRole('button')).toHaveClass('bg-duck-400');
 
         rerender(<Button variant="outline">Outline</Button>);
-        expect(screen.getByRole('button')).toHaveClass('border-neutral-300');
+        expect(screen.getByRole('button')).toHaveClass('border-2');
+        expect(screen.getByRole('button')).toHaveClass('border-duck-400');
     });
 
     it('applies custom className', () => {

@@ -508,8 +508,8 @@ describe('Card', () => {
         const cancelButton = screen.getByRole('button', { name: 'Cancel' });
         const submitButton = screen.getByRole('button', { name: 'Submit' });
 
-        expect(cancelButton).toHaveClass('border-neutral-300');
-        expect(submitButton).toHaveClass('bg-neutral-900');
+        expect(cancelButton).toHaveClass('border-duck-400');
+        expect(submitButton).toHaveClass('bg-duck-400');
 
         // Test button interactions
         await user.click(cancelButton);

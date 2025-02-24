@@ -34,7 +34,6 @@ const paginationItemVariants = cva(
             variant: {
                 default: 'hover:bg-neutral-100',
                 outline: 'border border-neutral-300 hover:bg-neutral-100',
-                cta: 'bg-neutral-900 text-white hover:bg-neutral-800',
             },
         },
         defaultVariants: {
@@ -206,8 +205,11 @@ export function Pagination({
                 return (
                     <Button
                         key={pageNumber}
-                        variant={page === pageNumber ? 'cta' : variant}
-                        className={cn(paginationItemVariants({ size, variant }))}
+                        variant={page === pageNumber ? 'default' : variant}
+                        className={cn(
+                            paginationItemVariants({ size, variant }),
+                            page === pageNumber && 'bg-duck-400 text-duck-950 hover:bg-duck-300'
+                        )}
                         onPress={() => handlePageChange(pageNumber as number)}
                         aria-label={`Go to page ${pageNumber}`}
                         aria-current={page === pageNumber ? 'page' : undefined}
