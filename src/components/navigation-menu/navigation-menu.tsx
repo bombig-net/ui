@@ -7,12 +7,12 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@/lib/cn';
 
 const navigationMenuTriggerStyle = cva(
-    'inline-flex justify-center items-center bg-white data-[state=open]:bg-neutral-100/50 hover:bg-neutral-100 focus:bg-neutral-100 data-[active]:bg-neutral-100/50 disabled:opacity-50 px-4 py-2 rounded-md w-max h-10 font-medium text-sm hover:text-neutral-900 focus:text-neutral-900 transition-colors disabled:pointer-events-none focus:outline-none group',
+    'inline-flex justify-center items-center bg-transparent data-[state=open]:bg-duck-400/20 data-[active]:bg-duck-400/20 hover:bg-neutral-800 focus:bg-neutral-800 disabled:opacity-50 px-4 py-2 rounded-md outline-none w-max h-10 font-medium text-white hover:text-white focus:text-white text-sm transition-colors',
     {
         variants: {
             variant: {
-                default: 'text-neutral-700',
-                muted: 'text-neutral-500',
+                default: '',
+                muted: 'text-neutral-400 hover:text-neutral-200 focus:text-neutral-200',
             },
         },
         defaultVariants: {
@@ -40,7 +40,7 @@ export const NavigationMenu = forwardRef<HTMLElement, NavigationMenuProps>(
         <RadixNavigationMenu.Root
             ref={ref}
             className={cn(
-                'relative z-10 flex flex-1 justify-center items-center max-w-max',
+                'z-10 relative flex flex-1 justify-center items-center max-w-max',
                 className
             )}
             {...props}
@@ -76,7 +76,7 @@ export const NavigationMenuTrigger = forwardRef<HTMLButtonElement, NavigationMen
         >
             {children}
             <ChevronDownIcon
-                className="group-data-[state=open]:rotate-180 relative top-[1px] ml-1 w-3 h-3 transition duration-300"
+                className="top-[1px] relative ml-1 w-3 h-3 group-data-[state=open]:rotate-180 transition duration-300"
                 aria-hidden="true"
             />
         </RadixNavigationMenu.Trigger>
@@ -103,7 +103,7 @@ export const NavigationMenuLink = forwardRef<HTMLAnchorElement, NavigationMenuLi
         <RadixNavigationMenu.Link
             ref={ref}
             className={cn(
-                'block space-y-1 hover:bg-neutral-100 focus:bg-neutral-100 p-3 rounded-md no-underline leading-none transition-colors select-none outline-none',
+                'block space-y-1 data-[active]:bg-duck-400/20 hover:bg-neutral-800 focus:bg-neutral-800 p-3 rounded-md outline-none text-white text-sm no-underline leading-none transition-colors select-none',
                 className
             )}
             {...props}
@@ -118,7 +118,7 @@ export const NavigationMenuViewport = forwardRef<HTMLDivElement, NavigationMenuV
             <RadixNavigationMenu.Viewport
                 ref={ref}
                 className={cn(
-                    'relative border-neutral-200 bg-white shadow-lg data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 mt-1.5 border rounded-md w-full md:w-[var(--radix-navigation-menu-viewport-width)] h-[var(--radix-navigation-menu-viewport-height)] data-[state=closed]:animate-out data-[state=open]:animate-in overflow-hidden',
+                    'relative bg-neutral-900 shadow-lg data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 mt-1.5 border border-neutral-800 rounded-md w-full md:w-[var(--radix-navigation-menu-viewport-width)] h-[var(--radix-navigation-menu-viewport-height)] data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out data-[state=open]:fade-in',
                     className
                 )}
                 {...props}
@@ -133,12 +133,12 @@ export const NavigationMenuIndicator = forwardRef<HTMLDivElement, NavigationMenu
         <RadixNavigationMenu.Indicator
             ref={ref}
             className={cn(
-                'top-full z-[1] flex justify-center items-end data-[state=hidden]:fade-out h-2.5 data-[state=hidden]:animate-out data-[state=visible]:animate-in overflow-hidden data-[state=visible]:fade-in',
+                'data-[state=hidden]:fade-out top-full z-[1] flex justify-center items-end h-2.5 overflow-hidden data-[state=hidden]:animate-out data-[state=visible]:animate-in data-[state=visible]:fade-in',
                 className
             )}
             {...props}
         >
-            <div className="relative top-[60%] bg-white shadow-md rounded-tl-sm w-2 h-2 rotate-45" />
+            <div className="top-[60%] relative bg-white shadow-md rounded-tl-sm w-2 h-2 rotate-45" />
         </RadixNavigationMenu.Indicator>
     )
 );
@@ -146,7 +146,7 @@ NavigationMenuIndicator.displayName = 'NavigationMenuIndicator';
 
 export const NavigationMenuSub = forwardRef<HTMLDivElement, NavigationMenuSubProps>(
     ({ className, children, ...props }, ref) => (
-        <RadixNavigationMenu.Sub ref={ref} className={cn('relative z-10', className)} {...props}>
+        <RadixNavigationMenu.Sub ref={ref} className={cn('z-10 relative', className)} {...props}>
             {children}
         </RadixNavigationMenu.Sub>
     )

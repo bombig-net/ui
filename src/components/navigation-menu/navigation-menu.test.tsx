@@ -141,34 +141,29 @@ describe('NavigationMenu', () => {
     });
 
     describe('Variants', () => {
-        it('applies default variant styles to trigger', () => {
+        beforeEach(() => {
             render(
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger variant="default">Default</NavigationMenuTrigger>
+                            <NavigationMenuTrigger>Default</NavigationMenuTrigger>
                         </NavigationMenuItem>
-                    </NavigationMenuList>
-                </NavigationMenu>
-            );
-
-            const trigger = screen.getByRole('button', { name: 'Default' });
-            expect(trigger).toHaveClass('text-neutral-700');
-        });
-
-        it('applies muted variant styles to trigger', () => {
-            render(
-                <NavigationMenu>
-                    <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger variant="muted">Muted</NavigationMenuTrigger>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
             );
+        });
 
+        it('applies default variant styles to trigger', () => {
+            const trigger = screen.getByRole('button', { name: 'Default' });
+            expect(trigger).toHaveClass('text-white');
+        });
+
+        it('applies muted variant styles to trigger', () => {
             const trigger = screen.getByRole('button', { name: 'Muted' });
-            expect(trigger).toHaveClass('text-neutral-500');
+            expect(trigger).toHaveClass('text-neutral-400');
         });
     });
 
