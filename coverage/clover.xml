@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1740410006611" clover="3.2.0">
-  <project timestamp="1740410006611" name="All files">
+<coverage generated="1740498602574" clover="3.2.0">
+  <project timestamp="1740498602574" name="All files">
     <metrics statements="300" coveredstatements="289" conditionals="155" coveredconditionals="142" methods="68" coveredmethods="63" elements="523" coveredelements="494" complexity="0" loc="300" ncloc="300" packages="15" files="17" classes="17"/>
     <package name="components.accordion">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -227,7 +227,7 @@
         <line num="66" count="1" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
-        <line num="72" count="15" type="stmt"/>
+        <line num="72" count="17" type="stmt"/>
         <line num="85" count="1" type="stmt"/>
         <line num="87" count="1" type="stmt"/>
         <line num="89" count="13" type="stmt"/>
@@ -376,7 +376,7 @@
         <line num="1" count="14" type="stmt"/>
         <line num="2" count="14" type="stmt"/>
         <line num="4" count="14" type="stmt"/>
-        <line num="5" count="804" type="stmt"/>
+        <line num="5" count="806" type="stmt"/>
       </file>
       <file name="groupTokensByType.ts" path="/home/runner/work/ui/ui/src/lib/groupTokensByType.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
