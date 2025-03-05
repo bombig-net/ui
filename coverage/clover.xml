@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1740498602574" clover="3.2.0">
-  <project timestamp="1740498602574" name="All files">
-    <metrics statements="300" coveredstatements="289" conditionals="155" coveredconditionals="142" methods="68" coveredmethods="63" elements="523" coveredelements="494" complexity="0" loc="300" ncloc="300" packages="15" files="17" classes="17"/>
+<coverage generated="1741186090115" clover="3.2.0">
+  <project timestamp="1741186090115" name="All files">
+    <metrics statements="357" coveredstatements="345" conditionals="158" coveredconditionals="145" methods="83" coveredmethods="77" elements="598" coveredelements="567" complexity="0" loc="357" ncloc="357" packages="17" files="19" classes="19"/>
     <package name="components.accordion">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="accordion.tsx" path="/home/runner/work/ui/ui/src/components/accordion/accordion.tsx">
@@ -195,6 +195,39 @@
         <line num="36" count="11" type="stmt"/>
       </file>
     </package>
+    <package name="components.dialog">
+      <metrics statements="27" coveredstatements="27" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7"/>
+      <file name="dialog.tsx" path="/home/runner/work/ui/ui/src/components/dialog/dialog.tsx">
+        <metrics statements="27" coveredstatements="27" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="101" count="16" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="108" count="16" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="133" count="16" type="stmt"/>
+        <line num="161" count="1" type="stmt"/>
+        <line num="163" count="1" type="stmt"/>
+        <line num="167" count="4" type="stmt"/>
+        <line num="178" count="1" type="stmt"/>
+        <line num="180" count="1" type="stmt"/>
+        <line num="184" count="3" type="stmt"/>
+        <line num="196" count="1" type="stmt"/>
+        <line num="198" count="1" type="stmt"/>
+        <line num="202" count="14" type="stmt"/>
+        <line num="212" count="1" type="stmt"/>
+        <line num="214" count="1" type="stmt"/>
+        <line num="218" count="3" type="stmt"/>
+        <line num="224" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="components.link">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="link.tsx" path="/home/runner/work/ui/ui/src/components/link/link.tsx">
@@ -320,6 +353,42 @@
         <line num="41" count="11" type="stmt"/>
       </file>
     </package>
+    <package name="components.sheet">
+      <metrics statements="30" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+      <file name="sheet.tsx" path="/home/runner/work/ui/ui/src/components/sheet/sheet.tsx">
+        <metrics statements="30" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="153" count="22" type="stmt"/>
+        <line num="154" count="1" type="stmt"/>
+        <line num="156" count="1" type="stmt"/>
+        <line num="160" count="22" type="stmt"/>
+        <line num="162" count="1" type="stmt"/>
+        <line num="164" count="1" type="stmt"/>
+        <line num="168" count="0" type="stmt"/>
+        <line num="170" count="1" type="stmt"/>
+        <line num="172" count="1" type="stmt"/>
+        <line num="194" count="22" type="stmt"/>
+        <line num="217" count="1" type="stmt"/>
+        <line num="219" count="1" type="stmt"/>
+        <line num="223" count="4" type="stmt"/>
+        <line num="234" count="1" type="stmt"/>
+        <line num="236" count="1" type="stmt"/>
+        <line num="240" count="3" type="stmt"/>
+        <line num="252" count="1" type="stmt"/>
+        <line num="254" count="1" type="stmt"/>
+        <line num="258" count="20" type="stmt"/>
+        <line num="268" count="1" type="stmt"/>
+        <line num="270" count="1" type="stmt"/>
+        <line num="274" count="3" type="stmt"/>
+        <line num="280" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="components.table">
       <metrics statements="27" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <file name="table.tsx" path="/home/runner/work/ui/ui/src/components/table/table.tsx">
@@ -373,10 +442,10 @@
       <metrics statements="17" coveredstatements="17" conditionals="3" coveredconditionals="3" methods="5" coveredmethods="4"/>
       <file name="cn.ts" path="/home/runner/work/ui/ui/src/lib/cn.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="14" type="stmt"/>
-        <line num="2" count="14" type="stmt"/>
-        <line num="4" count="14" type="stmt"/>
-        <line num="5" count="806" type="stmt"/>
+        <line num="1" count="16" type="stmt"/>
+        <line num="2" count="16" type="stmt"/>
+        <line num="4" count="16" type="stmt"/>
+        <line num="5" count="974" type="stmt"/>
       </file>
       <file name="groupTokensByType.ts" path="/home/runner/work/ui/ui/src/lib/groupTokensByType.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
