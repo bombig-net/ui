@@ -11,6 +11,7 @@ import {
     CardFooter,
     CardHeader,
     CardImage,
+    CardLabel,
     CardTitle,
 } from './card';
 
@@ -53,7 +54,7 @@ describe('Card', () => {
 
     it('renders with different variants', () => {
         const { rerender } = render(<Card variant="default">Default Card</Card>);
-        expect(screen.getByRole('article')).toHaveClass('hover:border-neutral-300');
+        expect(screen.getByRole('article')).toHaveClass('hover:border-meteor-500');
 
         rerender(
             <Card variant="ghost" shadow="none">
@@ -62,9 +63,10 @@ describe('Card', () => {
         );
         expect(screen.getByRole('article')).toHaveClass('border-none');
         expect(screen.getByRole('article')).toHaveClass('shadow-none');
+        expect(screen.getByRole('article')).toHaveClass('bg-transparent');
 
         rerender(<Card variant="outline">Outline Card</Card>);
-        expect(screen.getByRole('article')).toHaveClass('border-2');
+        expect(screen.getByRole('article')).toHaveClass('border-meteor-600');
     });
 
     it('applies blur effects correctly', () => {
@@ -76,6 +78,17 @@ describe('Card', () => {
 
         rerender(<Card blur="lg">Blur LG</Card>);
         expect(screen.getByRole('article')).toHaveClass('backdrop-blur-lg');
+    });
+
+    it('applies shadow effects correctly', () => {
+        const { rerender } = render(<Card shadow="sm">Shadow SM</Card>);
+        expect(screen.getByRole('article')).toHaveClass('shadow-sm');
+
+        rerender(<Card shadow="md">Shadow MD</Card>);
+        expect(screen.getByRole('article')).toHaveClass('shadow-md');
+
+        rerender(<Card shadow="lg">Shadow LG</Card>);
+        expect(screen.getByRole('article')).toHaveClass('shadow-lg');
     });
 
     it('handles clickable state correctly', async () => {
@@ -215,8 +228,10 @@ describe('Card', () => {
                 </Card>
             );
 
+            const title = screen.getByText('Title');
             const description = screen.getByText('Description text');
-            expect(description).toHaveClass('text-neutral-700');
+            expect(title).toHaveClass('text-duck-400');
+            expect(description).toHaveClass('text-gray-300');
         });
 
         it('provides proper keyboard navigation', async () => {
@@ -350,12 +365,7 @@ describe('Card', () => {
 
     describe('visual features', () => {
         it('handles hover effects correctly', () => {
-            render(
-                <Card isHoverable>
-                    <CardContent>Hoverable Card</CardContent>
-                </Card>
-            );
-
+            render(<Card isHoverable>Hoverable Card</Card>);
             expect(screen.getByRole('article')).toHaveClass('hover:scale-[1.02]');
         });
 
@@ -393,6 +403,11 @@ describe('Card', () => {
             );
 
             expect(screen.getByRole('article')).toHaveClass('w-full');
+        });
+
+        it('renders with rounded corners', () => {
+            render(<Card>Card with Corners</Card>);
+            expect(screen.getByRole('article')).toHaveClass('rounded-lg');
         });
     });
 
@@ -466,8 +481,8 @@ describe('Card', () => {
             const header = screen.getByText('Header Content').closest('header');
             const footer = screen.getByText('Footer Content').closest('footer');
 
-            expect(header).toHaveClass('backdrop-blur-sm', 'bg-white/50');
-            expect(footer).toHaveClass('backdrop-blur-sm', 'bg-white/50');
+            expect(header).toHaveClass('backdrop-blur-sm', 'bg-black/50');
+            expect(footer).toHaveClass('backdrop-blur-sm', 'bg-black/50');
         });
 
         it('handles content without padding', () => {
@@ -517,5 +532,87 @@ describe('Card', () => {
 
         await user.click(submitButton);
         expect(onSubmitSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('combines actions with styled buttons', () => {
+        render(
+            <Card>
+                <CardHeader>
+                    <CardTitle>Card with Buttons</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Card with styled button actions</p>
+                </CardContent>
+                <CardFooter className="flex justify-end space-x-4">
+                    <Button variant="outline">Cancel</Button>
+                    <Button>Submit</Button>
+                </CardFooter>
+            </Card>
+        );
+
+        const cancelButton = screen.getByRole('button', { name: 'Cancel' });
+        const submitButton = screen.getByRole('button', { name: 'Submit' });
+
+        expect(cancelButton).toHaveClass('border-duck-400');
+        expect(submitButton).toHaveClass('bg-duck-400');
+    });
+
+    it('maintains proper color and font styling', () => {
+        render(
+            <Card>
+                <CardHeader>
+                    <CardTitle>Title</CardTitle>
+                    <CardDescription>Description text</CardDescription>
+                </CardHeader>
+                <CardContent>Content text</CardContent>
+                <CardLabel>Label text</CardLabel>
+            </Card>
+        );
+
+        const title = screen.getByText('Title');
+        const description = screen.getByText('Description text');
+        const content = screen.getByText('Content text');
+        const label = screen.getByText('Label text');
+
+        expect(title).toHaveClass('text-duck-400', 'font-sans');
+        expect(description).toHaveClass('text-gray-300');
+        expect(content.closest('div')).toHaveClass('font-serif');
+        expect(label).toHaveClass('font-sans');
+    });
+
+    it('renders border in meteor-600 color', () => {
+        render(<Card>Card with Meteor Border</Card>);
+        expect(screen.getByRole('article')).toHaveClass('border-meteor-600');
+    });
+
+    it('renders CardLabel component properly', () => {
+        const { rerender } = render(
+            <Card>
+                <CardContent>Content</CardContent>
+                <CardLabel className="custom-label">Test Label</CardLabel>
+            </Card>
+        );
+
+        const label = screen.getByText('Test Label');
+        expect(label).toHaveClass('font-sans', 'font-bold', 'text-base', 'custom-label');
+        expect(label).not.toHaveClass('text-meteor-400');
+
+        rerender(
+            <Card>
+                <CardContent>Content</CardContent>
+                <CardLabel isEmphasized className="custom-label">
+                    Emphasized Label
+                </CardLabel>
+            </Card>
+        );
+
+        const emphasizedLabel = screen.getByText('Emphasized Label');
+        expect(emphasizedLabel).toHaveClass(
+            'font-sans',
+            'text-base',
+            'custom-label',
+            'font-bold',
+            'text-meteor-400'
+        );
     });
 });

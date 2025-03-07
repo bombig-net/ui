@@ -6,16 +6,16 @@ import { cn } from '@/lib/cn';
 
 const cardVariants = cva(
     [
-        'rounded-lg border border-neutral-200 bg-white text-neutral-950',
-        'transition-all duration-200 relative',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2',
+        'rounded-lg border-2 border-meteor-600 bg-black text-white',
+        'transition-all duration-200 relative overflow-hidden',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-duck-400 focus-visible:ring-offset-2',
     ].join(' '),
     {
         variants: {
             variant: {
-                default: 'hover:border-neutral-300',
-                ghost: 'border-none shadow-none',
-                outline: 'border-2',
+                default: 'hover:border-meteor-500',
+                ghost: 'border-none shadow-none bg-transparent',
+                outline: 'border-meteor-600',
             },
             shadow: {
                 none: 'shadow-none',
@@ -194,15 +194,15 @@ export function Card({
     );
 }
 
-const cardHeaderVariants = cva('flex flex-col space-y-1.5 p-6', {
+const cardHeaderVariants = cva('flex flex-col space-y-1.5 mb-2 p-6', {
     variants: {
         variant: {
             default: '',
             ghost: '',
-            outline: '',
+            outline: 'border-meteor-600',
         },
         isBlurred: {
-            true: 'backdrop-blur-sm bg-white/50',
+            true: 'backdrop-blur-sm bg-black/50',
             false: '',
         },
     },
@@ -229,18 +229,21 @@ export function CardHeader({
     );
 }
 
-const cardTitleVariants = cva('font-semibold text-2xl leading-none tracking-tight', {
-    variants: {
-        variant: {
-            default: '',
-            ghost: '',
-            outline: '',
+const cardTitleVariants = cva(
+    'mb-3 font-sans font-bold text-duck-400 text-2xl leading-none tracking-tight',
+    {
+        variants: {
+            variant: {
+                default: '',
+                ghost: '',
+                outline: '',
+            },
         },
-    },
-    defaultVariants: {
-        variant: 'default',
-    },
-});
+        defaultVariants: {
+            variant: 'default',
+        },
+    }
+);
 
 export interface CardTitleProps
     extends React.HTMLAttributes<HTMLHeadingElement>,
@@ -257,12 +260,12 @@ export function CardTitle({
     return <Comp className={cn(cardTitleVariants({ variant }), className)} {...props} />;
 }
 
-const cardDescriptionVariants = cva('text-neutral-600 text-sm', {
+const cardDescriptionVariants = cva('mb-1 font-serif text-base', {
     variants: {
         variant: {
-            default: 'text-neutral-700',
-            ghost: 'text-neutral-700',
-            outline: 'text-neutral-700',
+            default: 'text-gray-300',
+            ghost: 'text-gray-300',
+            outline: 'text-gray-300',
         },
     },
     defaultVariants: {
@@ -282,7 +285,7 @@ export function CardDescription({
     return <p className={cn(cardDescriptionVariants({ variant }), className)} {...props} />;
 }
 
-const cardContentVariants = cva('p-6 pt-0', {
+const cardContentVariants = cva('px-6 pt-0 pb-4 font-serif', {
     variants: {
         variant: {
             default: '',
@@ -317,7 +320,7 @@ export function CardContent({
     );
 }
 
-const cardFooterVariants = cva('flex items-center p-6 pt-0', {
+const cardFooterVariants = cva('flex items-center px-6 pt-0 pb-4 font-serif', {
     variants: {
         variant: {
             default: '',
@@ -325,7 +328,7 @@ const cardFooterVariants = cva('flex items-center p-6 pt-0', {
             outline: '',
         },
         isBlurred: {
-            true: 'backdrop-blur-sm bg-white/50',
+            true: 'backdrop-blur-sm bg-black/50',
             false: '',
         },
     },
@@ -374,7 +377,7 @@ export function CardImage({
     ...props
 }: CardImageProps): React.JSX.Element {
     const imageClasses = cn(
-        'w-full object-cover',
+        'mb-2 w-full object-cover',
         {
             'rounded-none': radius === 'none' || isCover,
             'rounded-sm': radius === 'sm' && !isCover,
@@ -412,4 +415,26 @@ export function CardImage({
     }
 
     return <img {...imgProps} />;
+}
+
+export interface CardLabelProps extends React.HTMLAttributes<HTMLDivElement> {
+    /** Whether the label should be visually emphasized */
+    isEmphasized?: boolean;
+}
+
+export function CardLabel({
+    className,
+    isEmphasized = false,
+    ...props
+}: CardLabelProps): React.JSX.Element {
+    return (
+        <div
+            className={cn(
+                'px-6 py-3 font-sans font-bold text-base',
+                isEmphasized && 'text-meteor-400',
+                className
+            )}
+            {...props}
+        />
+    );
 }
