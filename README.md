@@ -68,7 +68,7 @@ function App() {
 }
 ```
 
-That's it! No additional configuration needed. The components will work out of the box with all the necessary styles and design tokens.
+That's it! No additional configuration needed. The components will work out of the box with all the necessary styles and design tokens. All required fonts (Euclid Circular B and Geist Mono) are bundled with the package, so you don't need to manually import them.
 
 ## 📚 Documentation
 
