@@ -21,12 +21,12 @@
     ],
     "files": [
         "dist",
+        "fonts",
         "README.md"
     ],
     "scripts": {
-        "build": "pnpm validate && tsup && pnpm build:css && pnpm copy-fonts",
+        "build": "pnpm validate && tsup && pnpm build:css",
         "build:css": "tailwindcss -i src/styles/globals.css -o dist/styles.css --minify",
-        "copy-fonts": "xcopy /s /y /i \".storybook\\public\\fonts\" \"dist\\fonts\"",
         "dev": "tsup --watch",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "pnpm validate && storybook build",
