@@ -18,7 +18,7 @@ const config: StorybookConfig = {
     core: {
         builder: '@storybook/builder-vite',
     },
-    staticDirs: ['./public', '../'],
+    staticDirs: ['./public', { from: '../fonts', to: '/fonts' }],
     async viteFinal(config) {
         await Promise.resolve();
 
