@@ -14,7 +14,8 @@
             "require": "./dist/index.cjs",
             "default": "./dist/index.js"
         },
-        "./styles": "./dist/styles.css"
+        "./styles": "./dist/styles.css",
+        "./tailwind": "./tailwind-preset.js"
     },
     "sideEffects": [
         "**/*.css"
@@ -22,6 +23,7 @@
     "files": [
         "dist",
         "fonts",
+        "tailwind-preset.js",
         "README.md"
     ],
     "scripts": {

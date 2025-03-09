@@ -70,6 +70,35 @@ function App() {
 
 That's it! No additional configuration needed. The components will work out of the box with all the necessary styles and design tokens. All required fonts (Euclid Circular B and Geist Mono) are bundled with the package, so you don't need to manually import them.
 
+## 🎨 Using the Design System in Your Own Components
+
+If you want to use our design tokens, colors, typography, and other theme customizations in your own components, you can extend your Tailwind configuration:
+
+```js
+// tailwind.config.js
+module.exports = {
+    presets: [require('@bombig/ui/tailwind')],
+    // Your other Tailwind configuration
+    content: [
+        './src/**/*.{js,jsx,ts,tsx}',
+        // Include your content paths
+    ],
+};
+```
+
+This gives you access to all our design tokens:
+
+```jsx
+// Your custom component using our design system
+function CustomCard() {
+    return (
+        <div className="bg-duck-400 text-lg font-sans p-6 rounded-lg">
+            Custom component using Bombig UI design tokens
+        </div>
+    );
+}
+```
+
 ## 📚 Documentation
 
 Visit our [Storybook documentation](https://ui.bombig.net) to:
