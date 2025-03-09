@@ -73,4 +73,61 @@ describe('groupTokensByType', () => {
 
         expect(groupTokensByType(tokenSet)).toEqual({});
     });
+
+    it('groups tokens by their type', () => {
+        const tokenSet = {
+            global: {
+                'duck-50': {
+                    value: '#fefde8',
+                    type: 'color',
+                },
+                'tracking-tight': {
+                    value: '-0.025em',
+                    type: 'letterSpacing',
+                },
+                'text-base': {
+                    value: {
+                        fontSize: '20px',
+                        lineHeight: '28px',
+                        letterSpacing: '{tracking-tight}',
+                    },
+                    type: 'typography',
+                },
+            },
+            $themes: [],
+            $metadata: {
+                tokenSetOrder: ['global'],
+            },
+        };
+
+        const result = groupTokensByType(tokenSet);
+
+        // Check that tokens are grouped by type
+        expect(result.color).toBeDefined();
+        expect(result.letterSpacing).toBeDefined();
+        expect(result.typography).toBeDefined();
+
+        // Type assertion to handle the 'possibly undefined' error
+        const colorTokens = result.color as Record<string, string>;
+        const letterSpacingTokens = result.letterSpacing as Record<string, string>;
+        const typographyTokens = result.typography as Record<
+            string,
+            {
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+            }
+        >;
+
+        // Check that direct values are correctly extracted
+        expect(colorTokens['duck-50']).toBe('#fefde8');
+        expect(letterSpacingTokens['tracking-tight']).toBe('-0.025em');
+
+        // Check that nested token references are correctly resolved
+        expect(typographyTokens['text-base']).toEqual({
+            fontSize: '20px',
+            lineHeight: '28px',
+            letterSpacing: '-0.025em', // This should be resolved from {tracking-tight}
+        });
+    });
 });
