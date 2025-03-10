@@ -19,7 +19,6 @@
     font-display: swap;
 }
 
-/* Free font - bundled with library */
 @font-face {
     font-family: 'Geist Mono';
     src: url('../fonts/GeistMono-Regular.woff2') format('woff2');
