@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1741641688169" clover="3.2.0">
-  <project timestamp="1741641688169" name="All files">
-    <metrics statements="408" coveredstatements="394" conditionals="189" coveredconditionals="170" methods="90" coveredmethods="82" elements="687" coveredelements="646" complexity="0" loc="408" ncloc="408" packages="18" files="22" classes="22"/>
+<coverage generated="1741642542419" clover="3.2.0">
+  <project timestamp="1741642542419" name="All files">
+    <metrics statements="408" coveredstatements="394" conditionals="191" coveredconditionals="172" methods="90" coveredmethods="82" elements="689" coveredelements="648" complexity="0" loc="408" ncloc="408" packages="18" files="22" classes="22"/>
     <package name="components.accordion">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="accordion.tsx" path="/home/runner/work/ui/ui/src/components/accordion/accordion.tsx">
@@ -239,9 +239,9 @@
       </file>
     </package>
     <package name="components.dialog">
-      <metrics statements="27" coveredstatements="27" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7"/>
+      <metrics statements="27" coveredstatements="27" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
       <file name="dialog.tsx" path="/home/runner/work/ui/ui/src/components/dialog/dialog.tsx">
-        <metrics statements="27" coveredstatements="27" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7"/>
+        <metrics statements="27" coveredstatements="27" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -255,20 +255,20 @@
         <line num="108" count="16" type="stmt"/>
         <line num="110" count="1" type="stmt"/>
         <line num="112" count="1" type="stmt"/>
-        <line num="133" count="16" type="stmt"/>
-        <line num="161" count="1" type="stmt"/>
+        <line num="134" count="16" type="stmt"/>
         <line num="163" count="1" type="stmt"/>
-        <line num="167" count="4" type="stmt"/>
-        <line num="178" count="1" type="stmt"/>
+        <line num="165" count="1" type="stmt"/>
+        <line num="169" count="4" type="stmt"/>
         <line num="180" count="1" type="stmt"/>
-        <line num="184" count="3" type="stmt"/>
-        <line num="196" count="1" type="stmt"/>
+        <line num="182" count="1" type="stmt"/>
+        <line num="186" count="3" type="stmt"/>
         <line num="198" count="1" type="stmt"/>
-        <line num="202" count="14" type="stmt"/>
-        <line num="212" count="1" type="stmt"/>
+        <line num="200" count="1" type="stmt"/>
+        <line num="204" count="14" type="stmt"/>
         <line num="214" count="1" type="stmt"/>
-        <line num="218" count="3" type="stmt"/>
-        <line num="224" count="1" type="stmt"/>
+        <line num="216" count="1" type="stmt"/>
+        <line num="220" count="3" type="stmt"/>
+        <line num="226" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.link">
@@ -397,9 +397,9 @@
       </file>
     </package>
     <package name="components.sheet">
-      <metrics statements="30" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+      <metrics statements="30" coveredstatements="29" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
       <file name="sheet.tsx" path="/home/runner/work/ui/ui/src/components/sheet/sheet.tsx">
-        <metrics statements="30" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+        <metrics statements="30" coveredstatements="29" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -416,20 +416,20 @@
         <line num="168" count="0" type="stmt"/>
         <line num="170" count="1" type="stmt"/>
         <line num="172" count="1" type="stmt"/>
-        <line num="194" count="22" type="stmt"/>
-        <line num="217" count="1" type="stmt"/>
+        <line num="195" count="22" type="stmt"/>
         <line num="219" count="1" type="stmt"/>
-        <line num="223" count="4" type="stmt"/>
-        <line num="234" count="1" type="stmt"/>
+        <line num="221" count="1" type="stmt"/>
+        <line num="225" count="4" type="stmt"/>
         <line num="236" count="1" type="stmt"/>
-        <line num="240" count="3" type="stmt"/>
-        <line num="252" count="1" type="stmt"/>
+        <line num="238" count="1" type="stmt"/>
+        <line num="242" count="3" type="stmt"/>
         <line num="254" count="1" type="stmt"/>
-        <line num="258" count="20" type="stmt"/>
-        <line num="268" count="1" type="stmt"/>
+        <line num="256" count="1" type="stmt"/>
+        <line num="260" count="20" type="stmt"/>
         <line num="270" count="1" type="stmt"/>
-        <line num="274" count="3" type="stmt"/>
-        <line num="280" count="1" type="stmt"/>
+        <line num="272" count="1" type="stmt"/>
+        <line num="276" count="3" type="stmt"/>
+        <line num="282" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.table">
