@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1741642542419" clover="3.2.0">
-  <project timestamp="1741642542419" name="All files">
+<coverage generated="1741646184768" clover="3.2.0">
+  <project timestamp="1741646184768" name="All files">
     <metrics statements="408" coveredstatements="394" conditionals="191" coveredconditionals="172" methods="90" coveredmethods="82" elements="689" coveredelements="648" complexity="0" loc="408" ncloc="408" packages="18" files="22" classes="22"/>
     <package name="components.accordion">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -67,7 +67,7 @@
         <line num="9" count="3" type="stmt"/>
         <line num="33" count="3" type="stmt"/>
         <line num="34" count="118" type="stmt"/>
-        <line num="37" count="147" type="stmt"/>
+        <line num="37" count="154" type="stmt"/>
       </file>
     </package>
     <package name="components.card">
@@ -488,7 +488,7 @@
         <line num="1" count="18" type="stmt"/>
         <line num="2" count="18" type="stmt"/>
         <line num="4" count="18" type="stmt"/>
-        <line num="5" count="1079" type="stmt"/>
+        <line num="5" count="1086" type="stmt"/>
       </file>
       <file name="groupTokensByType.ts" path="/home/runner/work/ui/ui/src/lib/groupTokensByType.ts">
         <metrics statements="19" coveredstatements="18" conditionals="11" coveredconditionals="10" methods="3" coveredmethods="3"/>
