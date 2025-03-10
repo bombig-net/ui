@@ -38,12 +38,36 @@ async function copyAssets() {
         // Update font paths in the CSS file
         try {
             const cssFile = await fs.readFile('./dist/styles.css', 'utf8');
-            // Replace font paths to work with the package.json exports configuration
-            // This ensures fonts are referenced using the @bombig/ui/fonts/* path
-            // which will work in all environments (npm, yarn, pnpm)
-            const updatedCss = cssFile.replace(/\.\.\/assets\/fonts\//g, '@bombig/ui/fonts/');
+
+            // IMPORTANT: Use RELATIVE paths in the CSS
+            // This ensures compatibility across all package managers
+            // The previous approach of using @bombig/ui/fonts/ works in documentation
+            // but can lead to package manager-specific resolution issues
+            const updatedCss = cssFile.replace(/\.\.\/assets\/fonts\//g, './fonts/');
+
+            // For extra safety, verify no absolute paths remain
+            const absolutePathCheck = /\/\.pnpm\/|node_modules\/@bombig\/ui/;
+            if (absolutePathCheck.test(updatedCss)) {
+                console.error('⚠️ WARNING: Absolute paths detected in CSS file after processing!');
+                // Find and log all absolute paths for debugging
+                const matches = updatedCss.match(new RegExp(absolutePathCheck.source, 'g')) || [];
+                console.error(
+                    `Found ${matches.length} absolute paths: ${matches.slice(0, 3).join(', ')}${matches.length > 3 ? '...' : ''}`
+                );
+            }
+
             await fs.writeFile('./dist/styles.css', updatedCss);
-            console.log('✅ Updated font paths in CSS file to use package exports format');
+            console.log('✅ Updated font paths in CSS file to use relative paths (./fonts/)');
+
+            // Add verification step
+            const finalCss = await fs.readFile('./dist/styles.css', 'utf8');
+            console.log(
+                `✅ Final CSS verification - Font references: ${(
+                    finalCss.match(/url\(['"]?([^'"\)]+)['"]?\)/g) || []
+                )
+                    .slice(0, 3)
+                    .join(', ')}`
+            );
         } catch (err) {
             console.error('Error updating CSS file:', err);
         }
