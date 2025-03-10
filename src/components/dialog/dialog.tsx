@@ -126,6 +126,7 @@ export const DialogContent: React.FC<DialogContentProps> = React.forwardRef<
             onEscapeKeyDown,
             onPointerDownOutside,
             onInteractOutside,
+            'aria-describedby': ariaDescribedby = '',
             ...props
         },
         ref
@@ -147,6 +148,7 @@ export const DialogContent: React.FC<DialogContentProps> = React.forwardRef<
                 onEscapeKeyDown={onEscapeKeyDown}
                 onPointerDownOutside={onPointerDownOutside}
                 onInteractOutside={onInteractOutside}
+                aria-describedby={ariaDescribedby}
                 {...props}
             >
                 {children}

@@ -187,6 +187,7 @@ export const SheetContent: React.FC<SheetContentProps> = React.forwardRef<
             onEscapeKeyDown,
             onPointerDownOutside,
             onInteractOutside,
+            'aria-describedby': ariaDescribedby = '',
             ...props
         },
         ref
@@ -203,6 +204,7 @@ export const SheetContent: React.FC<SheetContentProps> = React.forwardRef<
                 onEscapeKeyDown={onEscapeKeyDown}
                 onPointerDownOutside={onPointerDownOutside}
                 onInteractOutside={onInteractOutside}
+                aria-describedby={ariaDescribedby}
                 {...props}
             >
                 {children}
