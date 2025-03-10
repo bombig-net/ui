@@ -63,7 +63,9 @@ jobs:
         run: pnpm build:css
 
       - name: Build Storybook
-        run: pnpm build-storybook
+        run: |
+          mkdir -p .storybook/public
+          pnpm build-storybook
 
       - name: Configure Git
         run: |

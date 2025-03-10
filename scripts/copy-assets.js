@@ -38,10 +38,12 @@ async function copyAssets() {
         // Update font paths in the CSS file
         try {
             const cssFile = await fs.readFile('./dist/styles.css', 'utf8');
-            // Replace font paths to use simple relative paths in the distributed version
-            const updatedCss = cssFile.replace(/\.\.\/assets\/fonts\//g, './fonts/');
+            // Replace font paths to work with the package.json exports configuration
+            // This ensures fonts are referenced using the @bombig/ui/fonts/* path
+            // which will work in all environments (npm, yarn, pnpm)
+            const updatedCss = cssFile.replace(/\.\.\/assets\/fonts\//g, '@bombig/ui/fonts/');
             await fs.writeFile('./dist/styles.css', updatedCss);
-            console.log('✅ Updated font paths in CSS file');
+            console.log('✅ Updated font paths in CSS file to use package exports format');
         } catch (err) {
             console.error('Error updating CSS file:', err);
         }
