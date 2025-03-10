@@ -27,15 +27,16 @@ Modern React component library powering all bombig.net websites and apps - craft
 ## ✨ Features
 
 - 🎯 Built with React Aria and Radix UI primitives
-- 🎨 Design tokens managed through Figma Tokens Studio
+- 🎨 Design tokens with organized typography, colors, and spacing
 - 💅 All styles customizable via className prop
 - ♿️ Accessible components out of the box
 - 📦 Full TypeScript support with strict type checking
-- 📱 Responsive by default
-- 🚀 Optimized for rapid prototyping
+- 📱 Responsive design by default
+- 🚀 Optimized for both development and production
 - 🧪 Comprehensive test suite with Jest and Testing Library
 - 🎭 Accessibility testing with jest-axe
 - 📝 ESLint and Prettier integration for code quality
+- 🖋️ Custom fonts bundled and ready to use
 
 ## 📦 Installation
 
@@ -68,7 +69,30 @@ function App() {
 }
 ```
 
-That's it! No additional configuration needed. The components will work out of the box with all the necessary styles and design tokens. All required fonts (Euclid Circular B and Geist Mono) are bundled with the package, so you don't need to manually import them.
+That's it! No additional configuration needed. The components will work out of the box with all the necessary styles and design tokens. All required fonts (Euclid Circular B and Geist Mono) are included with the package and will be loaded automatically with the styles.
+
+If you need direct access to the font files (for example, to use in your own CSS), they are also exposed through the package:
+
+```css
+/* Example of importing fonts directly */
+@font-face {
+    font-family: 'Euclid Circular B';
+    src: url('@bombig/ui/fonts/EuclidCircularB-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+```
+
+The exact syntax may vary depending on your bundler or framework. For webpack, you might need to use:
+
+```css
+@font-face {
+    font-family: 'Euclid Circular B';
+    src: url('~@bombig/ui/fonts/EuclidCircularB-Semibold-WebXL.woff2') format('woff2');
+    /* ... */
+}
+```
 
 ## 🎨 Using the Design System in Your Own Components
 
@@ -77,6 +101,7 @@ If you want to use our design tokens, colors, typography, and other theme custom
 ```js
 // tailwind.config.js
 module.exports = {
+    // Use the @bombig/ui Tailwind configuration
     presets: [require('@bombig/ui/tailwind')],
     // Your other Tailwind configuration
     content: [
@@ -99,14 +124,36 @@ function CustomCard() {
 }
 ```
 
+### Tailwind CSS Compatibility
+
+This design system uses Tailwind CSS internally for styling. The Tailwind configuration is exposed through the package's exports, allowing you to use it as a preset in your own Tailwind setup:
+
+```js
+// tailwind.config.js
+module.exports = {
+    presets: [require('@bombig/ui/tailwind')],
+    // Your project-specific configuration
+    content: [
+        './src/**/*.{js,jsx,ts,tsx}',
+        // Include your content paths
+    ],
+};
+```
+
+This preset includes all the design system's custom colors, fonts, spacing values, and other theme settings.
+
 ## 📚 Documentation
 
-Visit our [Storybook documentation](https://ui.bombig.net) to:
+Visit our [Storybook documentation](https://ui.bombig.net) for:
 
-- Explore all components
-- View live examples
-- Read usage guidelines
-- Try components interactively
+- **Component Showcase**: Explore all available components
+- **Live Examples**: Interact with components and see them in action
+- **Usage Guidelines**: Learn best practices for each component
+- **Props Reference**: Detailed API documentation for all component properties
+- **Theme Explorer**: See the complete design system tokens, colors, and typography
+- **Responsive Examples**: Test components at different viewport sizes
+
+The documentation is continuously updated as the design system evolves.
 
 ## 🛠 Development
 
@@ -116,11 +163,20 @@ This is bombig.net's internal design system, crafted for our projects and rapid 
 # Install dependencies
 pnpm install
 
-# Start development
+# Start development mode
 pnpm dev
 
-# Run Storybook
+# Build the library (production)
+pnpm build
+
+# Build without validation (faster for development)
+pnpm build:dev
+
+# Run Storybook development server
 pnpm storybook
+
+# Build Storybook static site
+pnpm build-storybook
 
 # Run tests
 pnpm test
@@ -132,7 +188,7 @@ pnpm test:watch
 pnpm test:coverage
 
 # Type check
-pnpm type-check
+pnpm typecheck
 
 # Lint code
 pnpm lint
@@ -140,7 +196,7 @@ pnpm lint
 # Format code
 pnpm format
 
-# Validate all (types, lint, format)
+# Validate all (types, lint, format, tests)
 pnpm validate
 ```
 

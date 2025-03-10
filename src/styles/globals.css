@@ -5,7 +5,7 @@
 /* Fonts bundled with the package */
 @font-face {
     font-family: 'Euclid Circular B';
-    src: url('../fonts/EuclidCircularB-Semibold-WebXL.woff2') format('woff2');
+    src: url('../assets/fonts/EuclidCircularB-Semibold-WebXL.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: 'Euclid Circular B';
-    src: url('../fonts/EuclidCircularB-MediumItalic-WebXL.woff2') format('woff2');
+    src: url('../assets/fonts/EuclidCircularB-MediumItalic-WebXL.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -21,7 +21,7 @@
 
 @font-face {
     font-family: 'Geist Mono';
-    src: url('../fonts/GeistMono-Regular.woff2') format('woff2');
+    src: url('../assets/fonts/GeistMono-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -29,7 +29,7 @@
 
 @font-face {
     font-family: 'Geist Mono';
-    src: url('../fonts/GeistMono-Medium.woff2') format('woff2');
+    src: url('../assets/fonts/GeistMono-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 // Standalone configuration with hardcoded values from processed tokens
-module.exports = {
+export default {
     darkMode: 'class',
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {

@@ -15,20 +15,21 @@
             "default": "./dist/index.js"
         },
         "./styles": "./dist/styles.css",
-        "./tailwind": "./tailwind-preset.js"
+        "./tailwind": "./dist/tailwind.config.js",
+        "./fonts/*": "./dist/fonts/*"
     },
     "sideEffects": [
         "**/*.css"
     ],
     "files": [
         "dist",
-        "fonts",
-        "tailwind-preset.js",
         "README.md"
     ],
     "scripts": {
-        "build": "pnpm validate && tsup && pnpm build:css",
+        "build": "pnpm validate && tsup && pnpm build:css && pnpm build:assets",
+        "build:dev": "tsup && pnpm build:css && pnpm build:assets",
         "build:css": "tailwindcss -i src/styles/globals.css -o dist/styles.css --minify",
+        "build:assets": "node scripts/copy-assets.js",
         "dev": "tsup --watch",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "pnpm validate && storybook build",
